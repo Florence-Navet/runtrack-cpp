@@ -42,6 +42,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job1/cmake_install.cmake")
   include("C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job2/cmake_install.cmake")
   include("C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job3/cmake_install.cmake")
+  include("C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job4/cmake_install.cmake")
+  include("C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job5/cmake_install.cmake")
 
 endif()
 

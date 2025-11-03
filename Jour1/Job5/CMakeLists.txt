@@ -1,2 +1,2 @@
 # Job1 : Hello World
-add_executable(Job1_hello_world hello_world.cpp)
+add_executable(Job5_destinees destinees.cpp)

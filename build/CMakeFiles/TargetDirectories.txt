@@ -9,3 +9,9 @@ C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jou
 C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job3/CMakeFiles/Job3_moyenne.dir
 C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job3/CMakeFiles/edit_cache.dir
 C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job3/CMakeFiles/rebuild_cache.dir
+C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job4/CMakeFiles/Job4_pairImpair.dir
+C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job4/CMakeFiles/edit_cache.dir
+C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job4/CMakeFiles/rebuild_cache.dir
+C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job5/CMakeFiles/Job5_destinees.dir
+C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job5/CMakeFiles/edit_cache.dir
+C:/Users/enola/OneDrive/Desktop/Githubplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job5/CMakeFiles/rebuild_cache.dir
