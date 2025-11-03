@@ -39,6 +39,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/Jour1/Job4/CMakeLists.txt"
   "E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/Jour1/Job5/CMakeLists.txt"
   "E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/Jour1/Job6/CMakeLists.txt"
+  "E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/Jour1/Job7/CMakeLists.txt"
+  "E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/Jour1/Job8/CMakeLists.txt"
   "CMakeFiles/4.0.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.0.2/CMakeRCCompiler.cmake"
   "CMakeFiles/4.0.2/CMakeSystem.cmake"
@@ -59,6 +61,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "Jour1/Job4/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Jour1/Job5/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Jour1/Job6/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Jour1/Job7/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Jour1/Job8/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -69,4 +73,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "Jour1/Job4/CMakeFiles/Job4_pairImpair.dir/DependInfo.cmake"
   "Jour1/Job5/CMakeFiles/Job5_destinees.dir/DependInfo.cmake"
   "Jour1/Job6/CMakeFiles/Job6_justePrix.dir/DependInfo.cmake"
+  "Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/DependInfo.cmake"
+  "Jour1/Job8/CMakeFiles/Job8_bissextile.dir/DependInfo.cmake"
   )

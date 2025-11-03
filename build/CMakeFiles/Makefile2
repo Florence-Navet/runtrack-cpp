@@ -68,6 +68,8 @@ all: Jour1/Job3/all
 all: Jour1/Job4/all
 all: Jour1/Job5/all
 all: Jour1/Job6/all
+all: Jour1/Job7/all
+all: Jour1/Job8/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -77,6 +79,8 @@ codegen: Jour1/Job3/codegen
 codegen: Jour1/Job4/codegen
 codegen: Jour1/Job5/codegen
 codegen: Jour1/Job6/codegen
+codegen: Jour1/Job7/codegen
+codegen: Jour1/Job8/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -86,6 +90,8 @@ preinstall: Jour1/Job3/preinstall
 preinstall: Jour1/Job4/preinstall
 preinstall: Jour1/Job5/preinstall
 preinstall: Jour1/Job6/preinstall
+preinstall: Jour1/Job7/preinstall
+preinstall: Jour1/Job8/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -95,6 +101,8 @@ clean: Jour1/Job3/clean
 clean: Jour1/Job4/clean
 clean: Jour1/Job5/clean
 clean: Jour1/Job6/clean
+clean: Jour1/Job7/clean
+clean: Jour1/Job8/clean
 .PHONY : clean
 
 #=============================================================================
@@ -210,6 +218,44 @@ Jour1/Job6/preinstall:
 # Recursive "clean" directory target.
 Jour1/Job6/clean: Jour1/Job6/CMakeFiles/Job6_justePrix.dir/clean
 .PHONY : Jour1/Job6/clean
+
+#=============================================================================
+# Directory level rules for directory Jour1/Job7
+
+# Recursive "all" directory target.
+Jour1/Job7/all: Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/all
+.PHONY : Jour1/Job7/all
+
+# Recursive "codegen" directory target.
+Jour1/Job7/codegen: Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/codegen
+.PHONY : Jour1/Job7/codegen
+
+# Recursive "preinstall" directory target.
+Jour1/Job7/preinstall:
+.PHONY : Jour1/Job7/preinstall
+
+# Recursive "clean" directory target.
+Jour1/Job7/clean: Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/clean
+.PHONY : Jour1/Job7/clean
+
+#=============================================================================
+# Directory level rules for directory Jour1/Job8
+
+# Recursive "all" directory target.
+Jour1/Job8/all: Jour1/Job8/CMakeFiles/Job8_bissextile.dir/all
+.PHONY : Jour1/Job8/all
+
+# Recursive "codegen" directory target.
+Jour1/Job8/codegen: Jour1/Job8/CMakeFiles/Job8_bissextile.dir/codegen
+.PHONY : Jour1/Job8/codegen
+
+# Recursive "preinstall" directory target.
+Jour1/Job8/preinstall:
+.PHONY : Jour1/Job8/preinstall
+
+# Recursive "clean" directory target.
+Jour1/Job8/clean: Jour1/Job8/CMakeFiles/Job8_bissextile.dir/clean
+.PHONY : Jour1/Job8/clean
 
 #=============================================================================
 # Target rules for target Jour1/Job1/CMakeFiles/Job1_hello_world.dir
@@ -402,6 +448,70 @@ Jour1/Job6/CMakeFiles/Job6_justePrix.dir/codegen:
 Jour1/Job6/CMakeFiles/Job6_justePrix.dir/clean:
 	$(MAKE) $(MAKESILENT) -f Jour1\Job6\CMakeFiles\Job6_justePrix.dir\build.make Jour1/Job6/CMakeFiles/Job6_justePrix.dir/clean
 .PHONY : Jour1/Job6/CMakeFiles/Job6_justePrix.dir/clean
+
+#=============================================================================
+# Target rules for target Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir
+
+# All Build rule for target.
+Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/all:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job7\CMakeFiles\Job7_InversionMystique.dir\build.make Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/depend
+	$(MAKE) $(MAKESILENT) -f Jour1\Job7\CMakeFiles\Job7_InversionMystique.dir\build.make Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles --progress-num=13,14 "Built target Job7_InversionMystique"
+.PHONY : Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/all
+
+# Build rule for subdir invocation for target.
+Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles 0
+.PHONY : Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/rule
+
+# Convenience name for target.
+Job7_InversionMystique: Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/rule
+.PHONY : Job7_InversionMystique
+
+# codegen rule for target.
+Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job7\CMakeFiles\Job7_InversionMystique.dir\build.make Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles --progress-num=13,14 "Finished codegen for target Job7_InversionMystique"
+.PHONY : Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/codegen
+
+# clean rule for target.
+Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job7\CMakeFiles\Job7_InversionMystique.dir\build.make Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/clean
+.PHONY : Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/clean
+
+#=============================================================================
+# Target rules for target Jour1/Job8/CMakeFiles/Job8_bissextile.dir
+
+# All Build rule for target.
+Jour1/Job8/CMakeFiles/Job8_bissextile.dir/all:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job8\CMakeFiles\Job8_bissextile.dir\build.make Jour1/Job8/CMakeFiles/Job8_bissextile.dir/depend
+	$(MAKE) $(MAKESILENT) -f Jour1\Job8\CMakeFiles\Job8_bissextile.dir\build.make Jour1/Job8/CMakeFiles/Job8_bissextile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles --progress-num=15,16 "Built target Job8_bissextile"
+.PHONY : Jour1/Job8/CMakeFiles/Job8_bissextile.dir/all
+
+# Build rule for subdir invocation for target.
+Jour1/Job8/CMakeFiles/Job8_bissextile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Jour1/Job8/CMakeFiles/Job8_bissextile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles 0
+.PHONY : Jour1/Job8/CMakeFiles/Job8_bissextile.dir/rule
+
+# Convenience name for target.
+Job8_bissextile: Jour1/Job8/CMakeFiles/Job8_bissextile.dir/rule
+.PHONY : Job8_bissextile
+
+# codegen rule for target.
+Jour1/Job8/CMakeFiles/Job8_bissextile.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job8\CMakeFiles\Job8_bissextile.dir\build.make Jour1/Job8/CMakeFiles/Job8_bissextile.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\CODEGITHUB\Codelaplateforme\2026\CPP\runtrack-cpp\build\CMakeFiles --progress-num=15,16 "Finished codegen for target Job8_bissextile"
+.PHONY : Jour1/Job8/CMakeFiles/Job8_bissextile.dir/codegen
+
+# clean rule for target.
+Jour1/Job8/CMakeFiles/Job8_bissextile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job8\CMakeFiles\Job8_bissextile.dir\build.make Jour1/Job8/CMakeFiles/Job8_bissextile.dir/clean
+.PHONY : Jour1/Job8/CMakeFiles/Job8_bissextile.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

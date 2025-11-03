@@ -45,6 +45,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job4/cmake_install.cmake")
   include("E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job5/cmake_install.cmake")
   include("E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job6/cmake_install.cmake")
+  include("E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job7/cmake_install.cmake")
+  include("E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job8/cmake_install.cmake")
 
 endif()
 

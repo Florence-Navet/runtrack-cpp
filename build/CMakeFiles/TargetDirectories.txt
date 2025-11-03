@@ -18,3 +18,9 @@ E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job5/CMakeFiles
 E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job6/CMakeFiles/Job6_justePrix.dir
 E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job6/CMakeFiles/edit_cache.dir
 E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job6/CMakeFiles/rebuild_cache.dir
+E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir
+E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job7/CMakeFiles/edit_cache.dir
+E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job7/CMakeFiles/rebuild_cache.dir
+E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job8/CMakeFiles/Job8_bissextile.dir
+E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job8/CMakeFiles/edit_cache.dir
+E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build/Jour1/Job8/CMakeFiles/rebuild_cache.dir

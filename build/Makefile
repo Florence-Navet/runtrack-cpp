@@ -193,6 +193,32 @@ Job6_justePrix/fast:
 	$(MAKE) $(MAKESILENT) -f Jour1\Job6\CMakeFiles\Job6_justePrix.dir\build.make Jour1/Job6/CMakeFiles/Job6_justePrix.dir/build
 .PHONY : Job6_justePrix/fast
 
+#=============================================================================
+# Target rules for targets named Job7_InversionMystique
+
+# Build rule for target.
+Job7_InversionMystique: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Job7_InversionMystique
+.PHONY : Job7_InversionMystique
+
+# fast build rule for target.
+Job7_InversionMystique/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job7\CMakeFiles\Job7_InversionMystique.dir\build.make Jour1/Job7/CMakeFiles/Job7_InversionMystique.dir/build
+.PHONY : Job7_InversionMystique/fast
+
+#=============================================================================
+# Target rules for targets named Job8_bissextile
+
+# Build rule for target.
+Job8_bissextile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Job8_bissextile
+.PHONY : Job8_bissextile
+
+# fast build rule for target.
+Job8_bissextile/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1\Job8\CMakeFiles\Job8_bissextile.dir\build.make Jour1/Job8/CMakeFiles/Job8_bissextile.dir/build
+.PHONY : Job8_bissextile/fast
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -207,6 +233,8 @@ help:
 	@echo ... Job4_pairImpair
 	@echo ... Job5_destinees
 	@echo ... Job6_justePrix
+	@echo ... Job7_InversionMystique
+	@echo ... Job8_bissextile
 .PHONY : help
 
 

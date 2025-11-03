@@ -20,3 +20,11 @@ cmake --build --preset mingw-build
 ```bash
 ./build/nomFichier.exe
 ```
+
+### pb de jeu de caractere UTF-8
+
+taper :
+
+```bash
+chcp.com 65001
+```

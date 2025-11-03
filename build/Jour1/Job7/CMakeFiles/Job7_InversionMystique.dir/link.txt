@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Job7_InversionMystique.dir/objects.a
+C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\Job7_InversionMystique.dir/objects.a @CMakeFiles\Job7_InversionMystique.dir\objects1.rsp
+C:\TDM-GCC-64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Job7_InversionMystique.dir/objects.a -Wl,--no-whole-archive -o ..\..\Job7_InversionMystique.exe -Wl,--out-implib,libJob7_InversionMystique.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Job7_InversionMystique.dir\linkLibs.rsp

@@ -14,4 +14,6 @@ add_subdirectory(Jour1/Job3)
 add_subdirectory(Jour1/Job4)
 add_subdirectory(Jour1/Job5)
 add_subdirectory(Jour1/Job6)
+add_subdirectory(Jour1/Job7)
+add_subdirectory(Jour1/Job8)
 
