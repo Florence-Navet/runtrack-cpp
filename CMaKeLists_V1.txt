@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10)
+project(RuntrackCPP LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Dire à CMake de mettre tous les exécutables à la racine du build
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+# Inclure les sous-dossiers
+add_subdirectory(Jour1/Job1)
+add_subdirectory(Jour1/Job2)
+add_subdirectory(Jour1/Job3)
+add_subdirectory(Jour1/Job4)
+add_subdirectory(Jour1/Job5)
+add_subdirectory(Jour1/Job6)
+add_subdirectory(Jour1/Job7)
+add_subdirectory(Jour1/Job8)
+

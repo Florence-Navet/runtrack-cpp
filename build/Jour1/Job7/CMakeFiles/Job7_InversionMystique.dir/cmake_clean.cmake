@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "../../Job7_InversionMystique.exe"
-  "../../Job7_InversionMystique.exe.manifest"
-  "../../Job7_InversionMystique.pdb"
   "CMakeFiles/Job7_InversionMystique.dir/InversionMystique.cpp.obj"
   "CMakeFiles/Job7_InversionMystique.dir/InversionMystique.cpp.obj.d"
+  "Job7_InversionMystique.exe"
+  "Job7_InversionMystique.exe.manifest"
+  "Job7_InversionMystique.pdb"
   "libJob7_InversionMystique.dll.a"
 )
 

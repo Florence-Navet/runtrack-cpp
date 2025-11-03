@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "../../Job3_moyenne.exe"
-  "../../Job3_moyenne.exe.manifest"
-  "../../Job3_moyenne.pdb"
   "CMakeFiles/Job3_moyenne.dir/moyenne.cpp.obj"
   "CMakeFiles/Job3_moyenne.dir/moyenne.cpp.obj.d"
+  "Job3_moyenne.exe"
+  "Job3_moyenne.exe.manifest"
+  "Job3_moyenne.pdb"
   "libJob3_moyenne.dll.a"
 )
 

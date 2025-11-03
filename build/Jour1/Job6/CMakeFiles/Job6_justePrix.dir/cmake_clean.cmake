@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "../../Job6_justePrix.exe"
-  "../../Job6_justePrix.exe.manifest"
-  "../../Job6_justePrix.pdb"
   "CMakeFiles/Job6_justePrix.dir/justePrix.cpp.obj"
   "CMakeFiles/Job6_justePrix.dir/justePrix.cpp.obj.d"
+  "Job6_justePrix.exe"
+  "Job6_justePrix.exe.manifest"
+  "Job6_justePrix.pdb"
   "libJob6_justePrix.dll.a"
 )
 

@@ -131,7 +131,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=RuntrackCPP
+CMAKE_PROJECT_NAME:STATIC=hello_world
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/TDM-GCC-64/bin/ranlib.exe
@@ -224,6 +224,15 @@ RuntrackCPP_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 RuntrackCPP_SOURCE_DIR:STATIC=E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp
+
+//Value Computed by CMake
+hello_world_BINARY_DIR:STATIC=E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp/build
+
+//Value Computed by CMake
+hello_world_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+hello_world_SOURCE_DIR:STATIC=E:/CODEGITHUB/Codelaplateforme/2026/CPP/runtrack-cpp
 
 
 ########################

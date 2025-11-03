@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "../../Job1_hello_world.exe"
-  "../../Job1_hello_world.exe.manifest"
-  "../../Job1_hello_world.pdb"
   "CMakeFiles/Job1_hello_world.dir/hello_world.cpp.obj"
   "CMakeFiles/Job1_hello_world.dir/hello_world.cpp.obj.d"
+  "Job1_hello_world.exe"
+  "Job1_hello_world.exe.manifest"
+  "Job1_hello_world.pdb"
   "libJob1_hello_world.dll.a"
 )
 

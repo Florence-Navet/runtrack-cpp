@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "../../Job4_pairImpair.exe"
-  "../../Job4_pairImpair.exe.manifest"
-  "../../Job4_pairImpair.pdb"
   "CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.obj"
   "CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.obj.d"
+  "Job4_pairImpair.exe"
+  "Job4_pairImpair.exe.manifest"
+  "Job4_pairImpair.pdb"
   "libJob4_pairImpair.dll.a"
 )
 
