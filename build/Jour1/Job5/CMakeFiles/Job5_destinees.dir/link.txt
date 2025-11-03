@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Job5_destinees.dir/objects.a
+C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\Job5_destinees.dir/objects.a @CMakeFiles\Job5_destinees.dir\objects1.rsp
+C:\TDM-GCC-64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Job5_destinees.dir/objects.a -Wl,--no-whole-archive -o ..\..\Job5_destinees.exe -Wl,--out-implib,libJob5_destinees.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Job5_destinees.dir\linkLibs.rsp

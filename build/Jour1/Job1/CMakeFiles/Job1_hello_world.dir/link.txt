@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Job1_hello_world.dir/objects.a
+C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\Job1_hello_world.dir/objects.a @CMakeFiles\Job1_hello_world.dir\objects1.rsp
+C:\TDM-GCC-64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Job1_hello_world.dir/objects.a -Wl,--no-whole-archive -o ..\..\Job1_hello_world.exe -Wl,--out-implib,libJob1_hello_world.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Job1_hello_world.dir\linkLibs.rsp

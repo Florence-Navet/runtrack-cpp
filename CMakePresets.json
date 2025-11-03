@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 10
+  },
+  "configurePresets": [
+    {
+      "name": "mingw",
+      "displayName": "Build with MinGW Makefiles",
+      "description": "Configuration preset for MinGW on Windows",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "mingw-build",
+      "configurePreset": "mingw",
+      "description": "Compile all executables using MinGW",
+      "jobs": 6
+    }
+  ]
+}
