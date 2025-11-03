@@ -1,0 +1,13 @@
+# ninja log v6
+3911	4145	7838841101494217	Job1_hello_world.exe	2c8d2c61a8f35d5a
+3928	4143	7838841101576516	Job2_multiplicator.exe	8b0a84b8d18fcf74
+3920	4142	7838841101576516	Job2_moyenne.exe	849ebe5cc3d37541
+14	3927	7838841062521171	Jour1/Job2/CMakeFiles/Job2_multiplicator.dir/multiplicator.cpp.obj	66082f9fc757e218
+19	3920	7838841062521171	Jour1/Job3/CMakeFiles/Job2_moyenne.dir/moyenne.cpp.obj	5f97def540a208da
+6	3907	7838841062451266	Jour1/Job1/CMakeFiles/Job1_hello_world.dir/hello_world.cpp.obj	627cf076c8c26186
+3	232	7838846873092668	build.ninja	441a0ecec44646b2
+7	383	7838842664923265	Jour1/Job3/CMakeFiles/Job3_moyenne.dir/moyenne.cpp.obj	8033a52c71445eee
+386	553	7838842668722127	Job3_moyenne.exe	acbb46a75902522c
+4	229	7838846873092668	build.ninja	441a0ecec44646b2
+10	502	7838846873498170	Jour1/Job3/CMakeFiles/Job3_moyenne.dir/moyenne.cpp.obj	8033a52c71445eee
+503	683	7838846878415521	Job3_moyenne.exe	acbb46a75902522c
