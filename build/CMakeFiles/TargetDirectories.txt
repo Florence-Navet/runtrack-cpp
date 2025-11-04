@@ -12,9 +12,6 @@
 /app/build/Jour1/Job4/CMakeFiles/Job4_pairImpair.dir
 /app/build/Jour1/Job4/CMakeFiles/edit_cache.dir
 /app/build/Jour1/Job4/CMakeFiles/rebuild_cache.dir
-/app/build/Jour1/Job5/CMakeFiles/Job5_destinees.dir
-/app/build/Jour1/Job5/CMakeFiles/edit_cache.dir
-/app/build/Jour1/Job5/CMakeFiles/rebuild_cache.dir
 /app/build/Jour1/Job6/CMakeFiles/Job6_justePrix.dir
 /app/build/Jour1/Job6/CMakeFiles/edit_cache.dir
 /app/build/Jour1/Job6/CMakeFiles/rebuild_cache.dir
@@ -27,3 +24,6 @@
 /app/build/Jour1/Job9/CMakeFiles/Job9_epreuveHero.dir
 /app/build/Jour1/Job9/CMakeFiles/edit_cache.dir
 /app/build/Jour1/Job9/CMakeFiles/rebuild_cache.dir
+/app/build/Jour1/Job11/CMakeFiles/Job11_echangePacte.dir
+/app/build/Jour1/Job11/CMakeFiles/edit_cache.dir
+/app/build/Jour1/Job11/CMakeFiles/rebuild_cache.dir

@@ -1,26 +1,27 @@
 #include <iostream>
+
+
 using namespace std;
 
-int main() {
+void echangeEntier(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
 
-    int n, m, temp;
-   cout << "Entrez deux entier : \n" << endl; 
-
-   for (int i = 0; i < 2; i++) {
-    cin >> n;
-    cin >> m;
-    cout << "avant échange n et m : "<< n<<"et" << m<< endl;
-   temp = n;
-   n = m;
-   m = temp;
-
-    
-    cout << "après échange n et m : "<<n <<"et"<< m<<  endl;
-
-
-   }
-   
-
-   return 0;
+    cout << "Après échange dans la fonction echangeEntier : a = " << a << ", b = " << b << endl;
 }
+
+void swapValues(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    
+    cout << "Après échange dans la fonction swapValues: a = " << a << ", b = " << b << endl;
+}
+
+
+
+
+
+
 

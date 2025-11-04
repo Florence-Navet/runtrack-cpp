@@ -169,19 +169,6 @@ Job4_pairImpair/fast:
 .PHONY : Job4_pairImpair/fast
 
 #=============================================================================
-# Target rules for targets named Job5_destinees
-
-# Build rule for target.
-Job5_destinees: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job5_destinees
-.PHONY : Job5_destinees
-
-# fast build rule for target.
-Job5_destinees/fast:
-	$(MAKE) $(MAKESILENT) -f Jour1/Job5/CMakeFiles/Job5_destinees.dir/build.make Jour1/Job5/CMakeFiles/Job5_destinees.dir/build
-.PHONY : Job5_destinees/fast
-
-#=============================================================================
 # Target rules for targets named Job6_justePrix
 
 # Build rule for target.
@@ -233,6 +220,19 @@ Job9_epreuveHero/fast:
 	$(MAKE) $(MAKESILENT) -f Jour1/Job9/CMakeFiles/Job9_epreuveHero.dir/build.make Jour1/Job9/CMakeFiles/Job9_epreuveHero.dir/build
 .PHONY : Job9_epreuveHero/fast
 
+#=============================================================================
+# Target rules for targets named Job11_echangePacte
+
+# Build rule for target.
+Job11_echangePacte: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job11_echangePacte
+.PHONY : Job11_echangePacte
+
+# fast build rule for target.
+Job11_echangePacte/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job11/CMakeFiles/Job11_echangePacte.dir/build.make Jour1/Job11/CMakeFiles/Job11_echangePacte.dir/build
+.PHONY : Job11_echangePacte/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -241,11 +241,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Job11_echangePacte"
 	@echo "... Job1_hello_world"
 	@echo "... Job2_multiplicator"
 	@echo "... Job3_moyenne"
 	@echo "... Job4_pairImpair"
-	@echo "... Job5_destinees"
 	@echo "... Job6_justePrix"
 	@echo "... Job7_InversionMystique"
 	@echo "... Job8_bissextile"
