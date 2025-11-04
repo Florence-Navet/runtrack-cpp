@@ -56,6 +56,10 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/app/build/Jour1/Job12/cmake_install.cmake")
   include("/app/build/Jour1/Job13/cmake_install.cmake")
   include("/app/build/Jour1/Job14/cmake_install.cmake")
+  include("/app/build/Jour1/Job15/cmake_install.cmake")
+  include("/app/build/Jour1/Job16/cmake_install.cmake")
+  include("/app/build/Jour1/Job17/cmake_install.cmake")
+  include("/app/build/Jour1/Job18/cmake_install.cmake")
 
 endif()
 

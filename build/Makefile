@@ -272,6 +272,58 @@ Job14_cube/fast:
 	$(MAKE) $(MAKESILENT) -f Jour1/Job14/CMakeFiles/Job14_cube.dir/build.make Jour1/Job14/CMakeFiles/Job14_cube.dir/build
 .PHONY : Job14_cube/fast
 
+#=============================================================================
+# Target rules for targets named Job15_bitiumQuest
+
+# Build rule for target.
+Job15_bitiumQuest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job15_bitiumQuest
+.PHONY : Job15_bitiumQuest
+
+# fast build rule for target.
+Job15_bitiumQuest/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job15/CMakeFiles/Job15_bitiumQuest.dir/build.make Jour1/Job15/CMakeFiles/Job15_bitiumQuest.dir/build
+.PHONY : Job15_bitiumQuest/fast
+
+#=============================================================================
+# Target rules for targets named Job14_triusCorda
+
+# Build rule for target.
+Job14_triusCorda: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job14_triusCorda
+.PHONY : Job14_triusCorda
+
+# fast build rule for target.
+Job14_triusCorda/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job16/CMakeFiles/Job14_triusCorda.dir/build.make Jour1/Job16/CMakeFiles/Job14_triusCorda.dir/build
+.PHONY : Job14_triusCorda/fast
+
+#=============================================================================
+# Target rules for targets named Job14_colisee
+
+# Build rule for target.
+Job14_colisee: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job14_colisee
+.PHONY : Job14_colisee
+
+# fast build rule for target.
+Job14_colisee/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job17/CMakeFiles/Job14_colisee.dir/build.make Jour1/Job17/CMakeFiles/Job14_colisee.dir/build
+.PHONY : Job14_colisee/fast
+
+#=============================================================================
+# Target rules for targets named Job14_heracles
+
+# Build rule for target.
+Job14_heracles: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job14_heracles
+.PHONY : Job14_heracles
+
+# fast build rule for target.
+Job14_heracles/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job18/CMakeFiles/Job14_heracles.dir/build.make Jour1/Job18/CMakeFiles/Job14_heracles.dir/build
+.PHONY : Job14_heracles/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -283,7 +335,11 @@ help:
 	@echo "... Job11_echangePacte"
 	@echo "... Job12_doublonMagie"
 	@echo "... Job13_fibonacci"
+	@echo "... Job14_colisee"
 	@echo "... Job14_cube"
+	@echo "... Job14_heracles"
+	@echo "... Job14_triusCorda"
+	@echo "... Job15_bitiumQuest"
 	@echo "... Job1_hello_world"
 	@echo "... Job2_multiplicator"
 	@echo "... Job3_moyenne"

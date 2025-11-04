@@ -1,0 +1,1 @@
+/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job14_heracles.dir/link.d CMakeFiles/Job14_heracles.dir/heracles.cpp.o -o Job14_heracles

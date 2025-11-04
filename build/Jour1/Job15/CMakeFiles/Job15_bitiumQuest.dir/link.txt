@@ -1,0 +1,1 @@
+/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job15_bitiumQuest.dir/link.d CMakeFiles/Job15_bitiumQuest.dir/bitiumQuest.cpp.o -o Job15_bitiumQuest
