@@ -27,3 +27,6 @@
 /app/build/Jour1/Job11/CMakeFiles/Job11_echangePacte.dir
 /app/build/Jour1/Job11/CMakeFiles/edit_cache.dir
 /app/build/Jour1/Job11/CMakeFiles/rebuild_cache.dir
+/app/build/Jour1/Job12/CMakeFiles/Job12_fibonacci.dir
+/app/build/Jour1/Job12/CMakeFiles/edit_cache.dir
+/app/build/Jour1/Job12/CMakeFiles/rebuild_cache.dir

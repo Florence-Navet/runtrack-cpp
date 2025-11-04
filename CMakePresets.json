@@ -23,7 +23,7 @@
       "name": "mingw-build",
       "configurePreset": "mingw",
       "description": "Compile all executables using MinGW",
-      "jobs": 8
+      "jobs": 12
     }
   ]
 }

@@ -28,6 +28,7 @@ taper :
 ```bash
 chcp.com 65001
 ```
+
 ```bash
 docker compose exec dev bash -c "cmake -S . -B build && cmake --build build && ./build/Job1_hello_world"
 ```
@@ -39,11 +40,12 @@ docker compose up -d
 # 2. Entrer dans le conteneur
 docker compose exec dev bash
 
-# 3. Compiler ton programme
+# 3. Compiler ton programme dans le dossier /app de mon conteneur
 cmake -S . -B build && cmake --build build
+# cmake -S . -B build -f '/app/CMakeLists.txt' && cmake --build build
 
 # 4. Lancer ton exécutable
-./build/Jour1/Job9/Job9_epreuveHero
+./build/Jour1/Job12/Job12_fibonacci
 
 # 5. Quitter le conteneur quand tu as fini
 exit

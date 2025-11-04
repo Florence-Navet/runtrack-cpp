@@ -233,6 +233,19 @@ Job11_echangePacte/fast:
 	$(MAKE) $(MAKESILENT) -f Jour1/Job11/CMakeFiles/Job11_echangePacte.dir/build.make Jour1/Job11/CMakeFiles/Job11_echangePacte.dir/build
 .PHONY : Job11_echangePacte/fast
 
+#=============================================================================
+# Target rules for targets named Job12_fibonacci
+
+# Build rule for target.
+Job12_fibonacci: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job12_fibonacci
+.PHONY : Job12_fibonacci
+
+# fast build rule for target.
+Job12_fibonacci/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build
+.PHONY : Job12_fibonacci/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -242,6 +255,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Job11_echangePacte"
+	@echo "... Job12_fibonacci"
 	@echo "... Job1_hello_world"
 	@echo "... Job2_multiplicator"
 	@echo "... Job3_moyenne"
