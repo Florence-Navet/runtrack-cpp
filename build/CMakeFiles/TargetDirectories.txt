@@ -30,3 +30,9 @@
 /app/build/Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir
 /app/build/Jour1/Job12/CMakeFiles/edit_cache.dir
 /app/build/Jour1/Job12/CMakeFiles/rebuild_cache.dir
+/app/build/Jour1/Job13/CMakeFiles/Job13_fibonacci.dir
+/app/build/Jour1/Job13/CMakeFiles/edit_cache.dir
+/app/build/Jour1/Job13/CMakeFiles/rebuild_cache.dir
+/app/build/Jour1/Job14/CMakeFiles/Job14_cube.dir
+/app/build/Jour1/Job14/CMakeFiles/edit_cache.dir
+/app/build/Jour1/Job14/CMakeFiles/rebuild_cache.dir

@@ -246,6 +246,32 @@ Job12_doublonMagie/fast:
 	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build
 .PHONY : Job12_doublonMagie/fast
 
+#=============================================================================
+# Target rules for targets named Job13_fibonacci
+
+# Build rule for target.
+Job13_fibonacci: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job13_fibonacci
+.PHONY : Job13_fibonacci
+
+# fast build rule for target.
+Job13_fibonacci/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job13/CMakeFiles/Job13_fibonacci.dir/build.make Jour1/Job13/CMakeFiles/Job13_fibonacci.dir/build
+.PHONY : Job13_fibonacci/fast
+
+#=============================================================================
+# Target rules for targets named Job14_cube
+
+# Build rule for target.
+Job14_cube: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job14_cube
+.PHONY : Job14_cube
+
+# fast build rule for target.
+Job14_cube/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job14/CMakeFiles/Job14_cube.dir/build.make Jour1/Job14/CMakeFiles/Job14_cube.dir/build
+.PHONY : Job14_cube/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -256,6 +282,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Job11_echangePacte"
 	@echo "... Job12_doublonMagie"
+	@echo "... Job13_fibonacci"
+	@echo "... Job14_cube"
 	@echo "... Job1_hello_world"
 	@echo "... Job2_multiplicator"
 	@echo "... Job3_moyenne"
