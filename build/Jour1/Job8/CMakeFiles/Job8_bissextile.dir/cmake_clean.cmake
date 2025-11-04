@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Job8_bissextile.dir/bissextile.cpp.obj"
-  "CMakeFiles/Job8_bissextile.dir/bissextile.cpp.obj.d"
-  "Job8_bissextile.exe"
-  "Job8_bissextile.exe.manifest"
+  "CMakeFiles/Job8_bissextile.dir/link.d"
+  "CMakeFiles/Job8_bissextile.dir/bissextile.cpp.o"
+  "CMakeFiles/Job8_bissextile.dir/bissextile.cpp.o.d"
+  "Job8_bissextile"
   "Job8_bissextile.pdb"
-  "libJob8_bissextile.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

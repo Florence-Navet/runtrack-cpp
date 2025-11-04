@@ -1,3 +1,1 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Job4_pairImpair.dir/objects.a
-C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\Job4_pairImpair.dir/objects.a @CMakeFiles\Job4_pairImpair.dir\objects1.rsp
-C:\TDM-GCC-64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Job4_pairImpair.dir/objects.a -Wl,--no-whole-archive -o Job4_pairImpair.exe -Wl,--out-implib,libJob4_pairImpair.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Job4_pairImpair.dir\linkLibs.rsp
+/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job4_pairImpair.dir/link.d CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.o -o Job4_pairImpair

@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Job3_moyenne.dir/moyenne.cpp.obj"
-  "CMakeFiles/Job3_moyenne.dir/moyenne.cpp.obj.d"
-  "Job3_moyenne.exe"
-  "Job3_moyenne.exe.manifest"
+  "CMakeFiles/Job3_moyenne.dir/link.d"
+  "CMakeFiles/Job3_moyenne.dir/moyenne.cpp.o"
+  "CMakeFiles/Job3_moyenne.dir/moyenne.cpp.o.d"
+  "Job3_moyenne"
   "Job3_moyenne.pdb"
-  "libJob3_moyenne.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -8,9 +8,9 @@ int main() {
    cin >> annee; 
 
    if((annee % 4 == 0 && annee % 100 != 0 )|| (annee % 400 == 0)){
-     cout << "L'année : " << annee<< "est bissextile"<<endl;
+     cout << "L'année : " << annee<< " est bissextile"<<endl;
    } else {
-     cout << "L'année : " << annee<< "n'est pas bissextile\n"<<endl;
+     cout << "L'année : " << annee<< " n'est pas bissextile\n"<<endl;
    }
 
  

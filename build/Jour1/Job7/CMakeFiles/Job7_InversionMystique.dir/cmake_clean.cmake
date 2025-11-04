@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Job7_InversionMystique.dir/InversionMystique.cpp.obj"
-  "CMakeFiles/Job7_InversionMystique.dir/InversionMystique.cpp.obj.d"
-  "Job7_InversionMystique.exe"
-  "Job7_InversionMystique.exe.manifest"
+  "CMakeFiles/Job7_InversionMystique.dir/link.d"
+  "CMakeFiles/Job7_InversionMystique.dir/InversionMystique.cpp.o"
+  "CMakeFiles/Job7_InversionMystique.dir/InversionMystique.cpp.o.d"
+  "Job7_InversionMystique"
   "Job7_InversionMystique.pdb"
-  "libJob7_InversionMystique.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

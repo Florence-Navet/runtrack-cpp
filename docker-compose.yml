@@ -8,8 +8,8 @@ services:
         source: ./CMakeLists.txt
         target: /app/CMakeLists.txt
       - type: bind
-        source: ./src
-        target: /app/src
+        source: ./Jour1
+        target: /app/Jour1
       - type: bind
         source: ./build
         target: /app/build

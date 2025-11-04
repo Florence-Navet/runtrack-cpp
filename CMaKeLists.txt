@@ -6,6 +6,7 @@ project(hello_world LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 # Add executable from source files
 add_subdirectory(Jour1/Job1)
 add_subdirectory(Jour1/Job2)
@@ -15,3 +16,4 @@ add_subdirectory(Jour1/Job5)
 add_subdirectory(Jour1/Job6)
 add_subdirectory(Jour1/Job7)
 add_subdirectory(Jour1/Job8)
+add_subdirectory(Jour1/Job9)

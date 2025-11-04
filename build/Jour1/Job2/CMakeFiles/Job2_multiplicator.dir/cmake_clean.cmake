@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Job2_multiplicator.dir/multiplicator.cpp.obj"
-  "CMakeFiles/Job2_multiplicator.dir/multiplicator.cpp.obj.d"
-  "Job2_multiplicator.exe"
-  "Job2_multiplicator.exe.manifest"
+  "CMakeFiles/Job2_multiplicator.dir/link.d"
+  "CMakeFiles/Job2_multiplicator.dir/multiplicator.cpp.o"
+  "CMakeFiles/Job2_multiplicator.dir/multiplicator.cpp.o.d"
+  "Job2_multiplicator"
   "Job2_multiplicator.pdb"
-  "libJob2_multiplicator.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

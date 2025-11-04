@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.obj"
-  "CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.obj.d"
-  "Job4_pairImpair.exe"
-  "Job4_pairImpair.exe.manifest"
+  "CMakeFiles/Job4_pairImpair.dir/link.d"
+  "CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.o"
+  "CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.o.d"
+  "Job4_pairImpair"
   "Job4_pairImpair.pdb"
-  "libJob4_pairImpair.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

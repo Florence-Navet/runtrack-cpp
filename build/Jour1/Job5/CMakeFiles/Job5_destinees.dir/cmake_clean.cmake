@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Job5_destinees.dir/destinees.cpp.obj"
-  "CMakeFiles/Job5_destinees.dir/destinees.cpp.obj.d"
-  "Job5_destinees.exe"
-  "Job5_destinees.exe.manifest"
+  "CMakeFiles/Job5_destinees.dir/link.d"
+  "CMakeFiles/Job5_destinees.dir/destinees.cpp.o"
+  "CMakeFiles/Job5_destinees.dir/destinees.cpp.o.d"
+  "Job5_destinees"
   "Job5_destinees.pdb"
-  "libJob5_destinees.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
