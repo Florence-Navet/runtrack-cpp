@@ -156,11 +156,11 @@ Jour1/Job11/clean: Jour1/Job11/CMakeFiles/Job11_echangePacte.dir/clean
 # Directory level rules for directory Jour1/Job12
 
 # Recursive "all" directory target.
-Jour1/Job12/all: Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/all
+Jour1/Job12/all: Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/all
 .PHONY : Jour1/Job12/all
 
 # Recursive "codegen" directory target.
-Jour1/Job12/codegen: Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/codegen
+Jour1/Job12/codegen: Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/codegen
 .PHONY : Jour1/Job12/codegen
 
 # Recursive "preinstall" directory target.
@@ -168,7 +168,7 @@ Jour1/Job12/preinstall:
 .PHONY : Jour1/Job12/preinstall
 
 # Recursive "clean" directory target.
-Jour1/Job12/clean: Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/clean
+Jour1/Job12/clean: Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/clean
 .PHONY : Jour1/Job12/clean
 
 #=============================================================================
@@ -593,36 +593,36 @@ Jour1/Job11/CMakeFiles/Job11_echangePacte.dir/clean:
 .PHONY : Jour1/Job11/CMakeFiles/Job11_echangePacte.dir/clean
 
 #=============================================================================
-# Target rules for target Jour1/Job12/CMakeFiles/Job12_fibonacci.dir
+# Target rules for target Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir
 
 # All Build rule for target.
-Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/all:
-	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/depend
-	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/app/build/CMakeFiles --progress-num=3,4 "Built target Job12_fibonacci"
-.PHONY : Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/all
+Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/all:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/depend
+	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/app/build/CMakeFiles --progress-num=3,4 "Built target Job12_doublonMagie"
+.PHONY : Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/all
 
 # Build rule for subdir invocation for target.
-Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/rule: cmake_check_build_system
+Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 0
-.PHONY : Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/rule
+.PHONY : Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/rule
 
 # Convenience name for target.
-Job12_fibonacci: Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/rule
-.PHONY : Job12_fibonacci
+Job12_doublonMagie: Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/rule
+.PHONY : Job12_doublonMagie
 
 # codegen rule for target.
-Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/app/build/CMakeFiles --progress-num=3,4 "Finished codegen for target Job12_fibonacci"
-.PHONY : Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/codegen
+Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/app/build/CMakeFiles --progress-num=3,4 "Finished codegen for target Job12_doublonMagie"
+.PHONY : Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/codegen
 
 # clean rule for target.
-Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/clean
-.PHONY : Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/clean
+Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/clean
+.PHONY : Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

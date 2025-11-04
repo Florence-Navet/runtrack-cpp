@@ -234,17 +234,17 @@ Job11_echangePacte/fast:
 .PHONY : Job11_echangePacte/fast
 
 #=============================================================================
-# Target rules for targets named Job12_fibonacci
+# Target rules for targets named Job12_doublonMagie
 
 # Build rule for target.
-Job12_fibonacci: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job12_fibonacci
-.PHONY : Job12_fibonacci
+Job12_doublonMagie: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job12_doublonMagie
+.PHONY : Job12_doublonMagie
 
 # fast build rule for target.
-Job12_fibonacci/fast:
-	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build
-.PHONY : Job12_fibonacci/fast
+Job12_doublonMagie/fast:
+	$(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build
+.PHONY : Job12_doublonMagie/fast
 
 # Help Target
 help:
@@ -255,7 +255,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Job11_echangePacte"
-	@echo "... Job12_fibonacci"
+	@echo "... Job12_doublonMagie"
 	@echo "... Job1_hello_world"
 	@echo "... Job2_multiplicator"
 	@echo "... Job3_moyenne"

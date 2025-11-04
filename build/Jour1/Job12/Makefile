@@ -117,42 +117,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/rule:
-	cd /app/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/rule
-.PHONY : Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/rule
+Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/rule:
+	cd /app/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/rule
+.PHONY : Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/rule
 
 # Convenience name for target.
-Job12_fibonacci: Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/rule
-.PHONY : Job12_fibonacci
+Job12_doublonMagie: Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/rule
+.PHONY : Job12_doublonMagie
 
 # fast build rule for target.
-Job12_fibonacci/fast:
-	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build
-.PHONY : Job12_fibonacci/fast
+Job12_doublonMagie/fast:
+	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build
+.PHONY : Job12_doublonMagie/fast
 
-fibonacci.o: fibonacci.cpp.o
-.PHONY : fibonacci.o
+doublonMagie.o: doublonMagie.cpp.o
+.PHONY : doublonMagie.o
 
 # target to build an object file
-fibonacci.cpp.o:
-	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/fibonacci.cpp.o
-.PHONY : fibonacci.cpp.o
+doublonMagie.cpp.o:
+	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/doublonMagie.cpp.o
+.PHONY : doublonMagie.cpp.o
 
-fibonacci.i: fibonacci.cpp.i
-.PHONY : fibonacci.i
+doublonMagie.i: doublonMagie.cpp.i
+.PHONY : doublonMagie.i
 
 # target to preprocess a source file
-fibonacci.cpp.i:
-	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/fibonacci.cpp.i
-.PHONY : fibonacci.cpp.i
+doublonMagie.cpp.i:
+	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/doublonMagie.cpp.i
+.PHONY : doublonMagie.cpp.i
 
-fibonacci.s: fibonacci.cpp.s
-.PHONY : fibonacci.s
+doublonMagie.s: doublonMagie.cpp.s
+.PHONY : doublonMagie.s
 
 # target to generate assembly for a file
-fibonacci.cpp.s:
-	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/build.make Jour1/Job12/CMakeFiles/Job12_fibonacci.dir/fibonacci.cpp.s
-.PHONY : fibonacci.cpp.s
+doublonMagie.cpp.s:
+	cd /app/build && $(MAKE) $(MAKESILENT) -f Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/build.make Jour1/Job12/CMakeFiles/Job12_doublonMagie.dir/doublonMagie.cpp.s
+.PHONY : doublonMagie.cpp.s
 
 # Help Target
 help:
@@ -162,10 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Job12_fibonacci"
-	@echo "... fibonacci.o"
-	@echo "... fibonacci.i"
-	@echo "... fibonacci.s"
+	@echo "... Job12_doublonMagie"
+	@echo "... doublonMagie.o"
+	@echo "... doublonMagie.i"
+	@echo "... doublonMagie.s"
 .PHONY : help
 
 
