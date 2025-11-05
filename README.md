@@ -44,6 +44,11 @@ docker compose exec dev bash
 cmake -S . -B build && cmake --build build
 # cmake -S . -B build -f '/app/CMakeLists.txt' && cmake --build build
 
+```bash
+cmake --build build --clean-first
+
+```
+
 # 4. Lancer ton exécutable
 ./build/Jour1/Job16/Job16_triusCorda
 
