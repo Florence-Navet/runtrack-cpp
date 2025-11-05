@@ -33,7 +33,7 @@ chcp.com 65001
 docker compose exec dev bash -c "cmake -S . -B build && cmake --build build && ./build/Job1_hello_world"
 ```
 
-```bash
+````bash
 # 1. Démarrer ton environnement
 docker compose up -d
 
@@ -47,15 +47,20 @@ cmake -S . -B build && cmake --build build
 ```bash
 cmake --build build --clean-first
 
-```
+````
 
 # 4. Lancer ton exécutable
-./build/Jour1/Job16/Job16_triusCorda
+
+./build/Jour1/Job18/Job18_heracles
 
 # 5. Quitter le conteneur quand tu as fini
+
 exit
 
 # 6. (Optionnel) Tout arrêter
+
 docker compose down
+
+```
 
 ```
