@@ -45,7 +45,7 @@ cmake -S . -B build && cmake --build build
 # cmake -S . -B build -f '/app/CMakeLists.txt' && cmake --build build
 
 # 4. Lancer ton exécutable
-./build/Jour1/Job12/Job12_fibonacci
+./build/Jour1/Job16/Job16_triusCorda
 
 # 5. Quitter le conteneur quand tu as fini
 exit

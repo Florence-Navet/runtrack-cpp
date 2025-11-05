@@ -1,0 +1,1 @@
+/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job16_triusCorda.dir/link.d CMakeFiles/Job16_triusCorda.dir/triusCorda.cpp.o -o Job16_triusCorda
