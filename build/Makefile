@@ -324,6 +324,19 @@ Job18_heracles/fast:
 	$(MAKE) $(MAKESILENT) -f Jour1/Job18/CMakeFiles/Job18_heracles.dir/build.make Jour1/Job18/CMakeFiles/Job18_heracles.dir/build
 .PHONY : Job18_heracles/fast
 
+#=============================================================================
+# Target rules for targets named Job01_main
+
+# Build rule for target.
+Job01_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Job01_main
+.PHONY : Job01_main
+
+# fast build rule for target.
+Job01_main/fast:
+	$(MAKE) $(MAKESILENT) -f Jour2/Job01/CMakeFiles/Job01_main.dir/build.make Jour2/Job01/CMakeFiles/Job01_main.dir/build
+.PHONY : Job01_main/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -332,6 +345,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Job01_main"
 	@echo "... Job11_echangePacte"
 	@echo "... Job12_doublonMagie"
 	@echo "... Job13_fibonacci"

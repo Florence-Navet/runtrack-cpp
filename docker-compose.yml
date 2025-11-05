@@ -13,6 +13,9 @@ services:
       - type: bind
         source: ./build
         target: /app/build
+      - type: bind
+        source: ./Jour2
+        target: /app/Jour2
     command: bash
     tty: true
     stdin_open: true
