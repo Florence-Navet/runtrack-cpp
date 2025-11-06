@@ -3,21 +3,34 @@
 
 #include "Aquatique.hpp"
 #include "Terrestre.hpp"
+#include <vector>
+#include <memory>
+#include <string>
+
+using namespace std;
 
 class Pingouin : public Aquatique, public Terrestre {
         private :
         double vitesseGlisse;
+        string nom;
 
         public: 
-        Pingouin(double vitesseNage, double vitesseMarche, double vitesseGlisse);
+        Pingouin(string nom, double vitesseNage, double vitesseMarche, double vitesseGlisse);
         Pingouin(const Pingouin& autre); //constructeur de copie
 
-        void SePresenter() const;
+        static vector<weak_ptr<Pingouin>> colonie;
 
+
+    // Destructeur
+    ~Pingouin();
+
+        void SePresenter() const;
 
         void setVitesseNage(double vitesse);
         void setVitesseMarche(double vitesse);
         void setVitesseGlisse(double vitesse);
+
+        static void afficherColonie();
         
 };
 

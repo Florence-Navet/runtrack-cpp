@@ -1,0 +1,20 @@
+#include "Pingouin.hpp"
+#include <memory>
+using namespace std;
+
+int main() {
+    cout << "Je suis le job 01" << endl;
+
+    shared_ptr<Pingouin> p1 = make_shared<Pingouin>("Oscar", 2.5, 1.8, 3.0);
+    shared_ptr<Pingouin> p2 = make_shared<Pingouin>("Lulu", 3.2, 1.5, 2.7);
+
+    Pingouin::colonie.push_back(p1);
+    Pingouin::colonie.push_back(p2);
+
+    Pingouin::afficherColonie();
+
+    cout << "\nSuppression de Lulu...\n";
+    p2.reset(); // Lulu est détruit
+
+    Pingouin::afficherColonie();
+}

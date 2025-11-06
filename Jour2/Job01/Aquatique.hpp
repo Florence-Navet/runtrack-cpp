@@ -12,7 +12,6 @@ class Aquatique {
         void setVitesseNage(double vitesse);
 
 
-
 };
 
 #endif

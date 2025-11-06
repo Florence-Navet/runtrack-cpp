@@ -1,5 +1,7 @@
-#include <iostream>
+
 #include "Aquatique.hpp"
+#include <iostream>
+
 
 
 Aquatique::Aquatique(double vitesse) : vitesseNage(vitesse) {}
@@ -18,7 +20,12 @@ void Aquatique::setVitesseNage(double vitesse) {
       }
 
 
-\
+
+// Créer votre colonie de pingouins en suivant les spécifications suivantes :
+// ➔ Créer un vector statique et public dans votre classe Pingouin, qui
+// contient tous les pingouins instanciés.
+// ➔ Attention : ils doivent être retirés du vector quand ils sont détruits, en
+// utilisant des shared_ptr.
 
 
 
