@@ -1,20 +1,46 @@
-#include "Pingouin.hpp"
-#include <memory>
-using namespace std;
+Ajouter à votre pingouin une méthode qui renvoie le temps qu’il met pour
+parcourir une piste qui se présente ainsi :
+➔ 15 mètres de pente à glisser.
+➔ 20 mètres à plat.
+➔ 50 mètres de nage.
+➔ 15 mètres à plat.
 
-int main() {
-    cout << "Je suis le job 01" << endl;
+Une fonction statique doit être présente pour afficher le nom et le temps de
+parcours de la piste de tous les pingouins.
 
-    shared_ptr<Pingouin> p1 = make_shared<Pingouin>("Oscar", 2.5, 1.8, 3.0);
-    shared_ptr<Pingouin> p2 = make_shared<Pingouin>("Lulu", 3.2, 1.5, 2.7);
 
-    Pingouin::colonie.push_back(p1);
-    Pingouin::colonie.push_back(p2);
+__________________________________________________
 
-    Pingouin::afficherColonie();
 
-    cout << "\nSuppression de Lulu...\n";
-    p2.reset(); // Lulu est détruit
+// 🔹 Calcule le temps que met le pingouin à parcourir la piste
+double Pingouin::calculerTempsParcours() const {
+    // Distances données
+    const double distanceGlisse = 15.0;
+    const double distancePlat1 = 20.0;
+    const double distanceNage = 50.0;
+    const double distancePlat2 = 15.0;
 
-    Pingouin::afficherColonie();
+    // Temps = distance / vitesse
+    double tempsGlisse = distanceGlisse / vitesseGlisse;
+    double tempsPlat = (distancePlat1 + distancePlat2) / getVitesseMarche();
+    double tempsNage = distanceNage / getVitesseNage();
+
+    double tempsTotal = tempsGlisse + tempsPlat + tempsNage;
+    return tempsTotal;
+}
+
+// 🔹 Méthode statique pour afficher le temps de parcours de tous les pingouins
+void Pingouin::afficherTempsTous() {
+    cout << "\n⏱️ Temps de parcours pour chaque pingouin :" << endl;
+
+    for (std::weak_ptr<Pingouin> &pingouinFaible : colonie) {
+        std::shared_ptr<Pingouin> pingouin = pingouinFaible.lock();
+        if (pingouin) {
+            double temps = pingouin->calculerTempsParcours();
+            cout << pingouin->getVitesseMarche() << " m/s à la marche, "
+                 << pingouin->getVitesseNage() << " m/s à la nage, "
+                 << "glisse à " << pingouin->vitesseGlisse << " m/s → ";
+            cout << "temps total : " << temps << " secondes (" << pingouin->nom << ")" << endl;
+        }
+    }
 }

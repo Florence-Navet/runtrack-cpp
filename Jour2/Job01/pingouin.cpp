@@ -65,9 +65,23 @@ void Pingouin::afficherColonie() {
 }
 
 
+double Pingouin::calculerTempsParcours()const {
+    const double distanceGlisse = 15.0;
+    const double distancePlatNr1 = 20.0;
+    const double distancePlatNr2 = 15.0;
+    const double distanceNage = 20.0;
 
-// Créer votre colonie de pingouins en suivant les spécifications suivantes :
-// ➔ Créer un vector statique et public dans votre classe Pingouin, qui
-// contient tous les pingouins instanciés.
-// ➔ Attention : ils doivent être retirés du vector quand ils sont détruits, en
-// utilisant des shared_ptr.
+    //temps = distance / vitesse
+    double tempsGlisse = distanceGlisse / vitesseGlisse;
+    double tempsPlat = (distancePlatNr1 + distancePlatNr2) / getVitesseMarche;
+    double tempsNage = distanceNage / getVitesseNage();
+
+    double tempsTotal = tempsGlisse + tempsPlat + tempsNage
+    return tempsTotal
+
+
+}
+
+
+
+

@@ -31,6 +31,10 @@ class Pingouin : public Aquatique, public Terrestre {
         void setVitesseGlisse(double vitesse);
 
         static void afficherColonie();
+
+        double calculerTempsParcours() const;
+
+        static void afficherTempsPourTous();
         
 };
 
@@ -38,6 +42,3 @@ class Pingouin : public Aquatique, public Terrestre {
 
 #endif
 
-// Reprenez votre classe Pingouin, et ajoutez-lui un Copy Constructor. done
-// Ajoutez-y lui aussi une vitesse de glisse (double, m/s), privée. done
-// Les vitesses doivent pouvoir être modifiées par des méthodes publiques.done
