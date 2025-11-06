@@ -9,9 +9,13 @@ void Aquatique::nager() const {
 }
 
 
+
 double Aquatique::getVitesseNage() const {
     return vitesseNage;
 }
+void Aquatique::setVitesseNage(double vitesse) {
+    vitesseNage = vitesse;
+      }
 
 
 \

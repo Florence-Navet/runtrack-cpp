@@ -9,6 +9,7 @@ class Terrestre {
         Terrestre(double vitesse);
         void marcher()const;
         double getVitesseMarche() const;
+        void setVitesseMarche(double vitesse);
 };
 
 

@@ -51,7 +51,7 @@ cmake --build build --clean-first
 
 # 4. Lancer ton exécutable
 
-./build/Jour1/Job18/Job18_heracles
+./build/Jour2/Job01/Job01_main
 
 # 5. Quitter le conteneur quand tu as fini
 
