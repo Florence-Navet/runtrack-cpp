@@ -62,7 +62,9 @@ void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
     } 
 
 
-    // Tri via la fonction comparerTemps
+    // Tri via la fonction comparerTemps - booleen 
+    // pingouin plus rapide avec plus lent : return true si  a arrive avant b dans le
+    // booleen
     sort(pingouinsActifs.begin(), pingouinsActifs.end(), Pingouin::comparerTemps);
 
     //reconstruction de la colonie
@@ -111,7 +113,6 @@ void Pingouin::afficherColonie() {
     }
 }
 
-//--METHODES DE LIEUX --
 
 
 // -- METHODES LIEES AU LIEUX --
@@ -135,7 +136,8 @@ void Pingouin::retirerLieu(const string& lieu) {
         std::cout << "Lieu retiré : "<< lieu << std::endl;
     } else  {
 
-    }std:: cout << "Aucun lieu trouvé ne correspond à "<< lieu << " ." << std::endl;
+    std:: cout << "Aucun lieu trouvé ne correspond à "<< lieu << " ." << std::endl;
+}
 
 
 }
@@ -195,7 +197,7 @@ void Pingouin::afficherTempsPourTous() {
 
 
 // ====================
-// 🔹 GETTERS & SETTERS
+// GETTERS & SETTERS
 // ====================
 
 // --- Vitesses ---
