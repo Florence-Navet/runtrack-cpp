@@ -5,31 +5,45 @@ using namespace std;
 
 
 int main() {
-    std::cout << "Je suis le job 01" << std::endl;
+    std::cout << "Je suis le job 06 - MEETUPS" << std::endl;
 
-    shared_ptr<Pingouin> pingu = make_shared<Pingouin>("Pingu", 2.5, 1.8, 3.0);
+    // --- Création des pingouins ---
+    shared_ptr<Pingouin> pingu    = make_shared<Pingouin>("Pingu",    2.5, 1.8, 3.0);
+    shared_ptr<Pingouin> adeline  = make_shared<Pingouin>("Adeline",  2.5, 1.8, 3.0);
+    shared_ptr<Pingouin> thibault = make_shared<Pingouin>("Thibault", 3.2, 1.5, 2.7);
+    shared_ptr<Pingouin> armelle  = make_shared<Pingouin>("Armelle",  3.4, 1.7, 1.3);
+
+    // --- Ajout à la colonie ---
     Pingouin::ajouterAuGroupe(pingu);
+    Pingouin::ajouterAuGroupe(adeline);
+    Pingouin::ajouterAuGroupe(thibault);
+    Pingouin::ajouterAuGroupe(armelle);
 
-
-    shared_ptr<Pingouin> p1 = make_shared<Pingouin>("Adeline",2.5, 1.8, 3.0);
-    Pingouin::ajouterAuGroupe(p1);
-    shared_ptr<Pingouin> p2 = make_shared<Pingouin>("Thibault",3.2, 1.5, 2.7);
-    Pingouin::ajouterAuGroupe(p2);
-    shared_ptr<Pingouin> p3 = make_shared<Pingouin>("Armelle",3.4, 1.7, 1.3);Pingouin::ajouterAuGroupe(p3);
-
+    // --- Affichage de la colonie ---
+    Pingouin::afficherColonie();
 
     // Pingouin::colonie.push_back(p1);
     // Pingouin::colonie.push_back(p2);
     // Pingouin::colonie.push_back(p3);
 
-    Pingouin::afficherColonie();
+    // --- Suppression d’un membre ---
+    cout << "\nSuppression de Thibault" << endl;
+    thibault.reset();              // Thibault quitte la colonie
+    Pingouin::nettoyerColonie();   // On nettoie les références mortes
+    Pingouin::afficherColonie();   // On réaffiche la colonie
 
-    cout << "\nSuppression de Thibault";
-    p2.reset();
-    Pingouin::nettoyerColonie();
-    Pingouin::afficherColonie();
-    pingu ->SePresenter();
-    p1 ->SePresenter();
+     // --- Présentation individuelle ---
+    cout << "\n=== Présentation des membres restants ===" << endl;
+    pingu->SePresenter();
+    adeline->SePresenter();
+
+    // --- Tests des lieux de rencontre ---
+    cout << "\n===  Gestion des lieux de rencontre ===" << endl;
+    Pingouin::afficherLieux();               // Affiche la liste initiale
+    Pingouin::ajouterLieu("Ile rocailleuse"); // Ajout d’un nouveau lieu
+    Pingouin::retirerLieu("banquise");       // Retrait d’un lieu
+    Pingouin::afficherLieux();               // Vérifie la mise à jour
+
 
     // Pingouin pingu("Pingu", 2.5, 1.8, 3.0);
 
@@ -37,6 +51,8 @@ int main() {
     // pingu.SePresenter();
 
     Pingouin::afficherTempsPourTous();
+
+     cout << "\n=== Fin du Job===" << endl;
 
     // Pingouin::afficherColonieTrieeParTemps();
 

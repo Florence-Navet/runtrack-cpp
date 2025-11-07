@@ -2,9 +2,19 @@
 #include <iostream>
 #include <algorithm>
 #include <string>   
+using namespace std;
 
+
+//initialisation de ma colonie
 vector<weak_ptr<Pingouin>> Pingouin::colonie;
 
+//initialisation de ma liste statique de lieux
+vector<string> Pingouin::lieuxRencontre = {"glacier", "banquise", "océan", "montagne du caillou blanc"};
+
+//initialisation de ma variable bool
+bool Pingouin::colonieNettoyee = false;
+
+// Constructeurs / destruteurs
 Pingouin::Pingouin(string nom, double vitesseNage, double vitesseMarche, double vitesseGlisse)
     : Aquatique(vitesseNage), Terrestre(vitesseMarche), nom(nom),vitesseGlisse(vitesseGlisse) 
     {
@@ -24,7 +34,13 @@ Pingouin::Pingouin(const Pingouin& autre)
     //  Destructeur
 Pingouin::~Pingouin() {
     cout << " Le pingouin " << nom << " a quitté la colonie." << endl;
+    // nettoyerColonie();
+    if (!colonieNettoyee) {
+        nettoyerColonie();
+        colonieNettoyee = true;
+    }
 
+    //------------------METHODES DE COLONIES-------------------------------------
     // Nettoyer les références 
     colonie.erase(
         remove_if(colonie.begin(), colonie.end(),
@@ -32,69 +48,50 @@ Pingouin::~Pingouin() {
         colonie.end());
 }
 
-void Pingouin :: SePresenter() const {
-    std::cout << "Je m'appelle " << getNom() << " !" << std::endl;
-    std::cout << "Je marche à " << getVitesseMarche() << " m/s." << std::endl;
-    std::cout << "Je nage à " << getVitesseNage() << " m/s." << std::endl;
-    std::cout << "Je glisse à " << vitesseGlisse << " m/s." << std::endl;
-
-}
-
-void Pingouin::setVitesseNage(double vitesse) {
-    Aquatique::setVitesseNage(vitesse);
-}
-
-void Pingouin::setVitesseMarche(double vitesse) {
-    Terrestre::setVitesseMarche(vitesse);
-}
-
-
-void Pingouin::setVitesseGlisse(double vitesse) {
-  vitesseGlisse = vitesse;
-}
-    bool comparator (int a, int b) {
-        return a > b;
-    }
 
 void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
     colonie.push_back(nouveauPingouin); // ajout ici du nouveau pingouin
     
     //convertir weak_ptr en shared_ptr
-    std::vector<shared_ptr<Pingouin>> pingouinsActifs;
-    for (std::vector<std::weak_ptr<Pingouin>>::iterator it = colonie.begin(); it !=colonie.end(); ++it)  {
-        std::shared_ptr<Pingouin>pingouin = it ->lock(); //transforme weak en shared
+    vector<shared_ptr<Pingouin>> pingouinsActifs;
+    for (vector<std::weak_ptr<Pingouin>>::iterator it = colonie.begin(); it !=colonie.end(); ++it)  {
+        shared_ptr<Pingouin>pingouin = it ->lock(); //transforme weak en shared
         if (pingouin) {
             pingouinsActifs.push_back(pingouin);
         }
     } 
 
-    //trier pingouins par temps de parcours croissants
-    std::sort(pingouinsActifs.begin(), pingouinsActifs.end(),
-    [](const std::shared_ptr<Pingouin>& a, const std::shared_ptr<Pingouin>&b) {
-        return a->calculerTempsParcours() < b->calculerTempsParcours();
-    });
+
+    // Tri via la fonction comparerTemps
+    sort(pingouinsActifs.begin(), pingouinsActifs.end(), Pingouin::comparerTemps);
 
     //reconstruction de la colonie
-    colonie.clear(); //on vide la coloine
+    colonie.clear(); //on vide la colonie
+
 
     //on remplit la colonie avec les pingouins triés en les convertissants en weak_ptr
-    for (std::vector<std::shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
+    for (vector<shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
         colonie.push_back(*it);
     }
 
-    std::cout << "\n Le pingouin " << nouveauPingouin->getNom()
-                << " a été ajouté et la colonie a été triée par temps de parcours." << std::endl;
+cout << "\n Le pingouin " << nouveauPingouin->getNom()
+                << " a été ajouté et la colonie a été triée par temps de parcours." << endl;
 
- std::cout << "\nColonie triée par temps de parcours :\n";
-    for (std::vector<std::shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
-        std::shared_ptr<Pingouin> pingouin = *it;
-        std::cout << "• " << pingouin->getNom()
-                  << " → " << pingouin->calculerTempsParcours() << " s" << std::endl;
+ cout << "\nColonie triée par temps de parcours :\n";
+    for (std::vector<shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
+    shared_ptr<Pingouin> pingouin = *it;
+    cout << "• " << pingouin->getNom()
+                  << " → " << pingouin->calculerTempsParcours() << " s" << endl;
     }
 
     
     
 }
+
+bool Pingouin::comparerTemps(const shared_ptr<Pingouin>& a, const shared_ptr<Pingouin>& b) {
+    return a->calculerTempsParcours() < b->calculerTempsParcours();
+}
+
 
 void Pingouin::nettoyerColonie() {
     colonie.erase(
@@ -102,17 +99,6 @@ void Pingouin::nettoyerColonie() {
                   [](weak_ptr<Pingouin>& wp) { return wp.expired(); }),
         colonie.end());
 }
-
-// void Pingouin::ColonieParTempsDeParcours() {
-//     std::cout << "\nColonie triée par temps de parcours :\n";
-// for (std::vector<std::shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
-//     std::shared_ptr<Pingouin> pingouin = *it;
-//     std::cout << "• " << pingouin->getNom()
-//               << " → " << pingouin->calculerTempsParcours() << " s" << std::endl;
-// }
-
-// }
-
 
 
 void Pingouin::afficherColonie() {
@@ -124,15 +110,54 @@ void Pingouin::afficherColonie() {
         }
     }
 }
-double Pingouin::getVitesseGlisse() const {
-    return vitesseGlisse;
+
+//--METHODES DE LIEUX --
+
+
+// -- METHODES LIEES AU LIEUX --
+
+void Pingouin::ajouterLieu(const string& lieu) {
+    // check si le lieu n'est pas deja existant
+    if (find(lieuxRencontre.begin(), lieuxRencontre.end(), lieu) == lieuxRencontre.end()) {
+        lieuxRencontre.push_back(lieu);
+        cout << " Nouveau lieu ajouté : " << lieu << endl;
+    } else {
+        cout << "Le lieu " << lieu << " existe déjà." <<endl;
+    }
 }
 
-string Pingouin::getNom() const {
-    return nom;
+void Pingouin::retirerLieu(const string& lieu) {
+    //creation d'un iterateur sur le vector <string>
+    std::vector<std::string>::iterator it = std::remove(lieuxRencontre.begin(), lieuxRencontre.end(), lieu);
+
+    if (it != lieuxRencontre.end()) {
+        lieuxRencontre.erase(it, lieuxRencontre.end());
+        std::cout << "Lieu retiré : "<< lieu << std::endl;
+    } else  {
+
+    }std:: cout << "Aucun lieu trouvé ne correspond à "<< lieu << " ." << std::endl;
+
+
+}
+
+void Pingouin::afficherLieux() {
+    cout << "\n Lieux de rencontre de nos amis Pingouins :" << endl;
+    for(vector <string>::iterator it = lieuxRencontre.begin(); it != lieuxRencontre.end(); ++it) {
+        cout <<  " - " << *it << endl;
+    }
 }
 
 
+// -- AUTRES METHODES --
+
+
+void Pingouin :: SePresenter() const {
+    std::cout << "Je m'appelle " << getNom() << " !" << std::endl;
+    std::cout << "Je marche à " << getVitesseMarche() << " m/s." << std::endl;
+    std::cout << "Je nage à " << getVitesseNage() << " m/s." << std::endl;
+    std::cout << "Je glisse à " << vitesseGlisse << " m/s." << std::endl;
+
+}
 
 double Pingouin::calculerTempsParcours() const {
 
@@ -168,6 +193,32 @@ void Pingouin::afficherTempsPourTous() {
 }
 
 
+
+// ====================
+// 🔹 GETTERS & SETTERS
+// ====================
+
+// --- Vitesses ---
+void Pingouin::setVitesseNage(double vitesse) {
+    Aquatique::setVitesseNage(vitesse);
+}
+
+void Pingouin::setVitesseMarche(double vitesse) {
+    Terrestre::setVitesseMarche(vitesse);
+}
+
+void Pingouin::setVitesseGlisse(double vitesse) {
+    vitesseGlisse = vitesse;
+}
+
+double Pingouin::getVitesseGlisse() const {
+    return vitesseGlisse;
+}
+
+// --- Identité ---
+string Pingouin::getNom() const {
+    return nom;
+}
 
 
 
