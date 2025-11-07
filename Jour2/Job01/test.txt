@@ -1,46 +1,29 @@
-Ajouter à votre pingouin une méthode qui renvoie le temps qu’il met pour
-parcourir une piste qui se présente ainsi :
-➔ 15 mètres de pente à glisser.
-➔ 20 mètres à plat.
-➔ 50 mètres de nage.
-➔ 15 mètres à plat.
+Le vector colony doit toujours être trié par vitesse de parcours de la piste.
+Utiliser un lambda pour définir la manière dont les pingouins sont comparés.
 
-Une fonction statique doit être présente pour afficher le nom et le temps de
-parcours de la piste de tous les pingouins.
+______________________________________________________
 
+void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
+    // Ajouter le nouveau pingouin à la colonie
+    colonie.push_back(nouveauPingouin);
 
-__________________________________________________
-
-
-// 🔹 Calcule le temps que met le pingouin à parcourir la piste
-double Pingouin::calculerTempsParcours() const {
-    // Distances données
-    const double distanceGlisse = 15.0;
-    const double distancePlat1 = 20.0;
-    const double distanceNage = 50.0;
-    const double distancePlat2 = 15.0;
-
-    // Temps = distance / vitesse
-    double tempsGlisse = distanceGlisse / vitesseGlisse;
-    double tempsPlat = (distancePlat1 + distancePlat2) / getVitesseMarche();
-    double tempsNage = distanceNage / getVitesseNage();
-
-    double tempsTotal = tempsGlisse + tempsPlat + tempsNage;
-    return tempsTotal;
-}
-
-// 🔹 Méthode statique pour afficher le temps de parcours de tous les pingouins
-void Pingouin::afficherTempsTous() {
-    cout << "\n⏱️ Temps de parcours pour chaque pingouin :" << endl;
-
-    for (std::weak_ptr<Pingouin> &pingouinFaible : colonie) {
-        std::shared_ptr<Pingouin> pingouin = pingouinFaible.lock();
-        if (pingouin) {
-            double temps = pingouin->calculerTempsParcours();
-            cout << pingouin->getVitesseMarche() << " m/s à la marche, "
-                 << pingouin->getVitesseNage() << " m/s à la nage, "
-                 << "glisse à " << pingouin->vitesseGlisse << " m/s → ";
-            cout << "temps total : " << temps << " secondes (" << pingouin->nom << ")" << endl;
+    // Étape 1 : convertir les weak_ptr en shared_ptr pour pouvoir les utiliser
+    vector<shared_ptr<Pingouin>> pingouinsActifs;
+    for (auto& referenceFaible : colonie) {
+        if (auto pingouinActif = referenceFaible.lock()) {
+            pingouinsActifs.push_back(pingouinActif);
         }
+    }
+
+    // Étape 2 : trier les pingouins par temps de parcours croissant
+    sort(pingouinsActifs.begin(), pingouinsActifs.end(),
+         [](const shared_ptr<Pingouin>& a, const shared_ptr<Pingouin>& b) {
+             return a->calculerTempsParcours() < b->calculerTempsParcours();
+         });
+
+    // Étape 3 : reconstruire la colonie avec les références triées
+    colonie.clear();
+    for (auto& pingouinTrie : pingouinsActifs) {
+        colonie.push_back(pingouinTrie);
     }
 }

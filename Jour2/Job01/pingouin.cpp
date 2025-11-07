@@ -53,8 +53,20 @@ void Pingouin::setVitesseGlisse(double vitesse) {
   vitesseGlisse = vitesse;
 }
 
-void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveau) {
-    colonie.push_back(nouveau);
+void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
+    colonie.push_back(nouveauPingouin);
+
+    //convertir weak_ptr en shared_ptr
+    vector<shared_ptr<Pingouin>> pingouinsActifs;
+    for (auto& referenceFaible : colonie) {
+        if (auto pingouinActif = referenceFaible.lock()) {
+            pingouinsActifs.push_back(pingouinActif);
+        }
+    }
+
+    //trier pingouins par temps de parcours croissants
+    
+    
     
 }
 
