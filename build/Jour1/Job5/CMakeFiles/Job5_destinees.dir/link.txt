@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job5_destinees.dir/link.d CMakeFiles/Job5_destinees.dir/destinees.cpp.o -o Job5_destinees
