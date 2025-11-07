@@ -14,6 +14,11 @@ class Pingouin : public Aquatique, public Terrestre {
         double vitesseGlisse;
         string nom;
 
+        public:
+        double getVitesseGlisse() const;
+        string getNom() const;
+
+
         public: 
         Pingouin(string nom, double vitesseNage, double vitesseMarche, double vitesseGlisse);
         Pingouin(const Pingouin& autre); //constructeur de copie
@@ -31,6 +36,10 @@ class Pingouin : public Aquatique, public Terrestre {
         void setVitesseGlisse(double vitesse);
 
         static void afficherColonie();
+        static void ajouterAuGroupe(shared_ptr<Pingouin> nouveau);
+        static void nettoyerColonie();
+
+
 
         double calculerTempsParcours() const;
 
