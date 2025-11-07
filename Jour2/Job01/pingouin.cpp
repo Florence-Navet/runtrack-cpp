@@ -52,20 +52,46 @@ void Pingouin::setVitesseMarche(double vitesse) {
 void Pingouin::setVitesseGlisse(double vitesse) {
   vitesseGlisse = vitesse;
 }
-
-void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
-    colonie.push_back(nouveauPingouin);
-
-    //convertir weak_ptr en shared_ptr
-    vector<shared_ptr<Pingouin>> pingouinsActifs;
-    for (auto& referenceFaible : colonie) {
-        if (auto pingouinActif = referenceFaible.lock()) {
-            pingouinsActifs.push_back(pingouinActif);
-        }
+    bool comparator (int a, int b) {
+        return a > b;
     }
 
-    //trier pingouins par temps de parcours croissants
+void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
+    colonie.push_back(nouveauPingouin); // ajout ici du nouveau pingouin
     
+    //convertir weak_ptr en shared_ptr
+    std::vector<shared_ptr<Pingouin>> pingouinsActifs;
+    for (std::vector<std::weak_ptr<Pingouin>>::iterator it = colonie.begin(); it !=colonie.end(); ++it)  {
+        std::shared_ptr<Pingouin>pingouin = it ->lock(); //transforme weak en shared
+        if (pingouin) {
+            pingouinsActifs.push_back(pingouin);
+        }
+    } 
+
+    //trier pingouins par temps de parcours croissants
+    std::sort(pingouinsActifs.begin(), pingouinsActifs.end(),
+    [](const std::shared_ptr<Pingouin>& a, const std::shared_ptr<Pingouin>&b) {
+        return a->calculerTempsParcours() < b->calculerTempsParcours();
+    });
+
+    //reconstruction de la colonie
+    colonie.clear(); //on vide la coloine
+
+    //on remplit la colonie avec les pingouins triés en les convertissants en weak_ptr
+    for (std::vector<std::shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
+        colonie.push_back(*it);
+    }
+
+    std::cout << "\n Le pingouin " << nouveauPingouin->getNom()
+                << " a été ajouté et la colonie a été triée par temps de parcours." << std::endl;
+
+ std::cout << "\nColonie triée par temps de parcours :\n";
+    for (std::vector<std::shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
+        std::shared_ptr<Pingouin> pingouin = *it;
+        std::cout << "• " << pingouin->getNom()
+                  << " → " << pingouin->calculerTempsParcours() << " s" << std::endl;
+    }
+
     
     
 }
@@ -76,6 +102,16 @@ void Pingouin::nettoyerColonie() {
                   [](weak_ptr<Pingouin>& wp) { return wp.expired(); }),
         colonie.end());
 }
+
+// void Pingouin::ColonieParTempsDeParcours() {
+//     std::cout << "\nColonie triée par temps de parcours :\n";
+// for (std::vector<std::shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
+//     std::shared_ptr<Pingouin> pingouin = *it;
+//     std::cout << "• " << pingouin->getNom()
+//               << " → " << pingouin->calculerTempsParcours() << " s" << std::endl;
+// }
+
+// }
 
 
 

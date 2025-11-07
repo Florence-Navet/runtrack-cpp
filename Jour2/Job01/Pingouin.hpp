@@ -44,6 +44,8 @@ class Pingouin : public Aquatique, public Terrestre {
         double calculerTempsParcours() const;
 
         static void afficherTempsPourTous();
+
+
         
 };
 
