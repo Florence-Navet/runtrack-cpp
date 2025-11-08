@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job2_multiplicator.dir/link.d CMakeFiles/Job2_multiplicator.dir/multiplicator.cpp.o -o Job2_multiplicator

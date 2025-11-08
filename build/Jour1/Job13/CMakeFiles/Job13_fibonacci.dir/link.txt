@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job13_fibonacci.dir/link.d CMakeFiles/Job13_fibonacci.dir/fibonacci.cpp.o -o Job13_fibonacci

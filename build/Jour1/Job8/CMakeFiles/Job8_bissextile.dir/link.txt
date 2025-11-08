@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job8_bissextile.dir/link.d CMakeFiles/Job8_bissextile.dir/bissextile.cpp.o -o Job8_bissextile

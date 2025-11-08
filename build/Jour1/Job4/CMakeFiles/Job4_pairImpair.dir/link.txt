@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job4_pairImpair.dir/link.d CMakeFiles/Job4_pairImpair.dir/pairImpair.cpp.o -o Job4_pairImpair

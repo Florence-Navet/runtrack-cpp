@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job1_hello_world.dir/link.d CMakeFiles/Job1_hello_world.dir/hello_world.cpp.o -o Job1_hello_world

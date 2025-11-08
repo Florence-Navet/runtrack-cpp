@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job3_moyenne.dir/link.d CMakeFiles/Job3_moyenne.dir/moyenne.cpp.o -o Job3_moyenne

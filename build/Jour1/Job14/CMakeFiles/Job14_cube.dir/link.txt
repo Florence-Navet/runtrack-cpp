@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job14_cube.dir/link.d CMakeFiles/Job14_cube.dir/cube.cpp.o -o Job14_cube

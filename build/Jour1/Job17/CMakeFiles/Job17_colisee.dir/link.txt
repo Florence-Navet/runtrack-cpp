@@ -1,1 +1,0 @@
-/usr/local/bin/c++ -Wl,--dependency-file=CMakeFiles/Job17_colisee.dir/link.d CMakeFiles/Job17_colisee.dir/colisee.cpp.o -o Job17_colisee
