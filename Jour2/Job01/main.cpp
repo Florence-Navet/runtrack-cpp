@@ -29,8 +29,8 @@ int main() {
     // --- Suppression d’un membre ---
     cout << "\nSuppression de Thibault" << endl;
     thibault.reset();              // Thibault quitte la colonie
-    Pingouin::nettoyerColonie();   // On nettoie les références mortes
-    Pingouin::afficherColonie();   // On réaffiche la colonie
+    Pingouin::nettoyerColonie();   // On nettoie les références mortes (ex: Thibault n'est plus snif snif)
+    Pingouin::afficherColonie();   // On réaffiche la colonie de mes amis Pingouins
 
      // --- Présentation individuelle ---
     cout << "\n=== Présentation des membres restants ===" << endl;
@@ -54,7 +54,7 @@ int main() {
 
      cout << "\n=== Fin du Job===" << endl;
 
-    // Pingouin::afficherColonieTrieeParTemps();
+    // Pingouin::afficherColonieTrieeParTemps(); TODO a faire plus tard si j'ai envie  ah ah !!
 
 
     
