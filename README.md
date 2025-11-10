@@ -67,7 +67,7 @@ docker compose down
 
 ---
 
-# Smart Pointers & Containers — Résumé Simplifié
+# Smart Pointers & Containers
 
 ## 1. shared_ptr - Le Protecteur de mémoire 👥
 
