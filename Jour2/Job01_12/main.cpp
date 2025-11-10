@@ -1,11 +1,14 @@
 #include <iostream>
 #include "Pingouin.hpp"
-#include <memory>
+
+
 using namespace std;
 
 
+
 int main() {
-    std::cout << "Je suis le job 07 - SKILLS" << std::endl;
+    std::cout << "Je suis le job 12 - MEETING" << std::endl;
+     std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
     // --- Création des pingouins ---
     shared_ptr<Pingouin> pingu    = make_shared<Pingouin>("Pingu",    2.5, 1.8, 3.0);
@@ -41,8 +44,33 @@ int main() {
     pingu ->supprimerCompetence("Faire la bouffe");
     pingu->afficherCompetences();
 
+    // PARTIE EXPLORATION BOUFFE
+cout << "\n=== Exploration et recherche de nourriture ===" << endl;
+//ajouter les lieux
+pingu ->ajouterLieuBouffe("Parardis perdu");
+adeline->ajouterLieuBouffe("Les glaces de l'enfer");
+adeline->ajouterLieuBouffe("Les glaces du paradis");
+
+//retirer un lieu
+adeline->retirerLieuBouffe("Les glaces du paradis");
+
+
+
+cout << "\n=== Associations Meetup ↔ Pêche ===" << endl;
+Pingouin::initialiserLieuxDePeche();
+Pingouin::afficherAssociationsMeetUpPeche(); 
+
+cout << "\n=== Exploration des meetups ===" << endl;
+pingu->seRendreAuMeetUp("glacier");
+adeline->seRendreAuMeetUp("banquise");
+armelle->seRendreAuMeetUp("océan");
+pingu->seRendreAuMeetUp("montagne du caillou blanc");
+
+pingu->afficherLieuBouffe();
+adeline->afficherLieuBouffe();
+
     // Relations sociales entre Pingouins
-    cout <<"\n====Amitiés entre nos amis Pingouins====";
+    cout <<"\n====Amitiés entre nos amis Pingouins====" << endl;
 
     //Creation de ses belles amitiés
     pingu->ajouterAmis(adeline);
@@ -115,8 +143,8 @@ armelle->afficherTempsCompetition();
 
      // --- Présentation individuelle ---
     cout << "\n=== Présentation des membres restants ===" << endl;
-    pingu->SePresenter();
-    adeline->SePresenter();
+    pingu->sePresenter();
+    adeline->sePresenter();
 
     // --- Tests des lieux de rencontre ---
     cout << "\n===  Gestion des lieux de rencontre ===" << endl;
@@ -129,7 +157,7 @@ armelle->afficherTempsCompetition();
     // Pingouin pingu("Pingu", 2.5, 1.8, 3.0);
 
     std::cout << " Oscar le pingouin se déplace : "<<std::endl;
-    // pingu.SePresenter();
+    // pingu.sePresenter();
 
     Pingouin::afficherTempsPourTous();
 
