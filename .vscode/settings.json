@@ -65,6 +65,7 @@
     "string_view": "cpp",
     "ranges": "cpp",
     "map": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "unordered_set": "cpp"
   }
 }

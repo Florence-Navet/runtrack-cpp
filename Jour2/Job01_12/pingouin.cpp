@@ -1,12 +1,5 @@
 #include "Pingouin.hpp"
-#include <iostream>
-#include <algorithm>
-#include <string>   
-#include <map>
-#include <unordered_map>
 
-
-using namespace std;
 
 
 //initialisation de ma colonie
@@ -17,6 +10,9 @@ vector<string> Pingouin::lieuxRencontre = {"glacier", "banquise", "océan", "mon
 
 //initialisation de ma variable bool
 bool Pingouin::colonieNettoyee = false;
+
+//initialisation de ma map de lieux de peches
+std::unordered_map<std::string, std::string> Pingouin::lieuxDePecheAssocies;
 
 // Constructeurs / destruteurs
 Pingouin::Pingouin(string nom, double vitesseNage, double vitesseMarche, double vitesseGlisse)
@@ -115,7 +111,7 @@ void Pingouin::afficherColonie() {
     for (std::weak_ptr<Pingouin> &pingouinFaible : colonie) {
         std::shared_ptr<Pingouin> pingouin = pingouinFaible.lock();
         if (pingouin) {  
-            pingouin->SePresenter();
+            pingouin->sePresenter();
         }
     }
 }
@@ -166,7 +162,7 @@ void Pingouin::afficherLieux() {
 
 
 
-void Pingouin :: SePresenter() const {
+void Pingouin :: sePresenter() const {
     std::cout << "Je m'appelle " << getNom() << " !" << std::endl;
     std::cout << "Je marche à " << getVitesseMarche() << " m/s." << std::endl;
     std::cout << "Je nage à " << getVitesseNage() << " m/s." << std::endl;
@@ -414,6 +410,172 @@ for (std::unordered_map<std::string, std::string>::const_iterator it = journal.b
     }
 }
 
+// ===============
+// JO  DES PINGOUINS
+// ===============
+
+void Pingouin::ajouterTempsCompétition(double temps)
+{
+    if (temps < 0) 
+    {
+        cout << " [  " << this->nom << " ] Temps non validé : " << temps << " secondes." << endl; 
+    } else
+    {
+        tempsCompetitions.insert(temps);
+        cout << " [  " << this->nom << " ] a terminé la compétition en " << temps << " secondes !" << endl;
+    }
+    
+}
+
+void Pingouin::afficherTempsCompetition()
+{
+    cout << "\nTemps de compétition de [ " << nom << " ] : " << endl;
+
+    if(tempsCompetitions.empty())
+    {
+        cout << "Aucun temps enregistré. Ce pingouin n'a pas encore concouru !!" <<endl;
+    }
+
+    int rang = 1;
+     for (std::multiset<double>::const_iterator it = tempsCompetitions.begin(); it != tempsCompetitions.end(); ++it)
+     {
+        cout << " " << rang << " performance " << *it << " secondes" << endl;
+        rang++;
+     }
+     cout << "Meilleur temps : " << *tempsCompetitions.begin() << "secondes ! " << endl;
+
+}
+
+double Pingouin::meilleurTemps()
+ {
+    if (tempsCompetitions.empty())
+    return -1.0;
+
+    return *tempsCompetitions.begin();
+}
+
+// =========================
+// RECHERCHE DE NOURRITURE
+// =========================
+
+void Pingouin::ajouterLieuBouffe(const std::string& lieu)
+{
+// verifions si deja trouve le lieu de bouffe
+    if (emplacementsNourriture.find(lieu)== emplacementsNourriture.end()) 
+{
+    emplacementsNourriture.insert(lieu);
+    cout << " [ " << this->nom << " ]  a découvert un nouvel emplacement de bouffe : " << lieu << " . " << endl;
+} else
+{
+    cout << " [ "<< this->nom << "  ] connait déja l'emplacement " << lieu << "." <<endl;
+}
+
+
+}
+
+void Pingouin::retirerLieuBouffe(const std::string& lieu)
+{
+    std::unordered_set<std::string>::iterator it = emplacementsNourriture.find(lieu);
+
+    if( it != emplacementsNourriture.end())
+    {
+        emplacementsNourriture.erase(lieu);
+        cout << " [  "<<this->nom<<  " ] a oublié ou perdu l'accé à l'emplacement " << lieu << "." << endl;
+    } else
+    {
+       cout << " [  "<<this->nom<<" ] ne connait pas l'emplacement "<< lieu << " ."<<endl;
+    }
+    
+}
+
+void Pingouin::afficherLieuBouffe() 
+{
+    std::cout <<"\nEmplacements de nourriture connus par [  "<<this->nom<<" ] : "   << endl;
+
+    if (emplacementsNourriture.empty())
+    {
+        cout << " Aucun lieu decouvert pour le moment !!" << endl;
+    }
+
+    for (std::unordered_set<std::string>::const_iterator it = emplacementsNourriture.begin(); it!=emplacementsNourriture.end(); ++it) 
+    {
+        cout << " - " << *it << endl;
+    }
+}
+
+// =========================
+// ASSOCIATION LIEUX MEETUP ↔ LIEUX DE PÊCHE
+// =========================
+
+void Pingouin::initialiserLieuxDePeche()
+{
+    lieuxDePecheAssocies = 
+    {
+    
+            {"glacier", "Le lieu maudit"},
+            {"banquise", "le trou de l'enfer"},
+            {"océan", "les abysses sans fonds"},
+            {"montagne du caillou blanc", "la montagne du destin"}
+        
+    };
+    cout << "\n Associations entre meetup et lieu de pêche initialisées !" << endl;
+}
+
+void Pingouin::seRendreAuMeetUp(const std::string& lieu)
+{
+    if (std::find(lieuxRencontre.begin(),lieuxRencontre.end(), lieu) == lieuxRencontre.end())
+    {
+        cout << "[ "<< this->nom << " ] ne connait pas le lieu de meetup  " << lieu << "  !" << endl;
+        return;
+    }
+
+    cout << " [ " << this->nom << " ] se rend au meetup "<< lieu << "..." <<endl;
+
+    //verifions si le lieu est associé à une zone de peche
+     std::unordered_map<std::string, std::string>::iterator it = lieuxDePecheAssocies.find(lieu);
+
+     if (it == lieuxDePecheAssocies.end())
+     {
+        cout << "Aucune zone de pêche n'est liée à ce lieu de meetup " << endl;
+        return;
+     }
+     std::string zonePeche = it->second;
+     cout << "-> Zone de pêche associée : " << zonePeche <<endl;
+
+
+     //random pour trouver un poison
+   
+     int chance_poisson = std::rand() % 100; // 0 à 99
+
+     if (chance_poisson < 60)
+     {
+        cout << " [ " << this->nom << " ] a trouvé un poisson à "<<zonePeche << " ! " << endl;
+
+        //ajout emplacement de nourriture
+        emplacementsNourriture.insert(zonePeche);
+     } else
+     {
+        std::cout << " [ " << this->nom << " ] n’a rien trouvé aujourd’hui à " << zonePeche << "..." << std::endl;
+     }
+     
+
+}
+
+void Pingouin::afficherAssociationsMeetUpPeche()
+{
+    cout << "\n Liste des association Meetup <-> Lieux de Pêches : " << endl;
+
+    if (lieuxDePecheAssocies.empty())
+    {
+        cout << " Aucune association trouvée entre les deux !! " << endl;
+        return;
+    }
+
+    for (std::unordered_map<std::string, std::string>:: const_iterator it = lieuxDePecheAssocies.begin(); it!=lieuxDePecheAssocies.end(); ++it )
+    {
+        cout << " - " << it->first << " <-> " << it->second <<endl;
+    }
+}
 
 
 // ====================

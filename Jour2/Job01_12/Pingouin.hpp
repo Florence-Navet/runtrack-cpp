@@ -9,8 +9,14 @@
 #include <map>
 #include <set>
 #include <unordered_map>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
+
+#include <iostream>
+#include <algorithm>
+#include <unordered_set> 
 
 class Pingouin : public Aquatique, public Terrestre {
         private :
@@ -52,6 +58,16 @@ class Pingouin : public Aquatique, public Terrestre {
         std::unordered_map<std::string, std::string>journal;
 
 
+        //multiset pour les compétitions (en secondes) plusieurs perf possibles
+        std::multiset<double> tempsCompetitions;
+
+        //unordored pour la nourriture
+        std::unordered_set<std::string>emplacementsNourriture;
+
+        //association statique en  lieu meetup et lieu de pech
+        static std::unordered_map<std::string, std::string>lieuxDePecheAssocies;
+
+
 
 
         //calculs et affichage
@@ -82,9 +98,26 @@ class Pingouin : public Aquatique, public Terrestre {
         void supprimerDonneesJournal(const std::string&date);
         void afficherJournal();
 
+        //Methodes liées au Compétitions
+        void ajouterTempsCompétition(double temps);
+        void afficherTempsCompetition();
+        double meilleurTemps(); // meilleur chrono
+
+        //Methodes pour la recherches de nourritures
+        void ajouterLieuBouffe(const std::string& lieu);
+        void retirerLieuBouffe(const std::string& lieu);
+        void afficherLieuBouffe();
+
+        //methode init pour associer meetup et lieux de peche
+        static void initialiserLieuxDePeche();
+
+        //Methode exploration: aller au meetup et reussir à pecher
+        void seRendreAuMeetUp(const std::string& lieu);
+        static void afficherAssociationsMeetUpPeche();
+
 
         //Autres
-         void SePresenter() const;
+         void sePresenter() const;
 
         
 };
