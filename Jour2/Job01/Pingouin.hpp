@@ -6,6 +6,7 @@
 #include <vector>
 #include <memory>
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -14,6 +15,9 @@ class Pingouin : public Aquatique, public Terrestre {
         double vitesseGlisse;
         string nom;
         static bool colonieNettoyee;
+
+        // Map de compétences des Pingouins
+        map<string, int> competences;
 
         public:
         //contructeurs // destructeurs
@@ -50,6 +54,13 @@ class Pingouin : public Aquatique, public Terrestre {
         static void ajouterLieu(const string& lieu);
         static void retirerLieu(const string& lieu);
         static void afficherLieux();
+
+        //Methodes gestions des compétences
+        void ajouterCompetence(const string& nom, int niveau);
+        void modifierCompetence(const string&nom, int nouveauNiveau);
+        void supprimerCompetence(const string&nom);
+        void afficherCompetences();
+
 
         //Autres
          void SePresenter() const;

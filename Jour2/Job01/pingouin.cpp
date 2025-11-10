@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <string>   
+#include <map>
 using namespace std;
 
 
@@ -193,6 +194,57 @@ void Pingouin::afficherTempsPourTous() {
         }
     }
 }
+
+// --GESTION DES COMPETENCES--
+void Pingouin::ajouterCompetence(const string& nom, int niveau) {
+    // Vérifie si la compétence existe déjà
+    if (competences.find(nom) == competences.end()) {
+        competences[nom] = niveau;
+        cout << " [ "<<this ->nom <<" ] "<< "- Nouvelle compétence ajoutée : " << nom << " (niveau " << niveau << ")" << endl;
+    } else {
+        cout << " [ "<<this ->nom <<" ] "<< "- La compétence " << nom << " existe déjà. Utilisez modifierCompetence()." << endl;
+    }
+}
+
+void Pingouin::modifierCompetence(const string&nom, int nouveauNiveau)
+{
+    map<string, int>::iterator it = competences.find(nom);
+    if(it != competences.end()) {
+        it->second = nouveauNiveau;
+        cout << "Compétence " << nom << " mise à jour au niveau " << nouveauNiveau << endl;
+                cout <<"vous avez levUp !!" << endl;
+    } else {
+        cout << "Aucune compétence particulière associée au nom. " << nom << endl;
+    }
+}
+void Pingouin::supprimerCompetence(const string&nom)
+{
+        map<string, int>::iterator it = competences.find(nom);
+        if (it != competences.end()) {
+            competences.erase(it);
+            cout << "Compétence " <<nom << " supprimée." <<endl;
+        } else 
+        {
+            cout << " Impossible de supprimer : compétence " << nom  <<" introuvable ou inexistance" << endl;
+        }
+}
+
+void Pingouin::afficherCompetences() 
+{
+    cout << "\nCompétences de " << nom << " : " << endl;
+    if (competences.empty())
+    {
+    cout << "  Aucune compétence enregistrée. T'es pas bon !!! " << endl;
+
+    } else 
+    {
+        for (map <string, int> ::const_iterator it = competences.begin(); it != competences.end(); ++it)
+        {
+            cout << " - " << it->first << " : niveau " << it->second << endl;
+        }
+    }
+}
+
 
 
 

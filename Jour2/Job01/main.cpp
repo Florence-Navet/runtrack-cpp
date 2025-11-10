@@ -5,7 +5,7 @@ using namespace std;
 
 
 int main() {
-    std::cout << "Je suis le job 06 - MEETUPS" << std::endl;
+    std::cout << "Je suis le job 07 - SKILLS" << std::endl;
 
     // --- Création des pingouins ---
     shared_ptr<Pingouin> pingu    = make_shared<Pingouin>("Pingu",    2.5, 1.8, 3.0);
@@ -18,6 +18,28 @@ int main() {
     Pingouin::ajouterAuGroupe(adeline);
     Pingouin::ajouterAuGroupe(thibault);
     Pingouin::ajouterAuGroupe(armelle);
+
+
+
+       // Partie compétences
+ cout << "\n=== Gestion des compétences ===" << endl;
+
+    pingu->ajouterCompetence("plongée", 5);
+    adeline->ajouterCompetence("pêche", 8);
+    thibault->ajouterCompetence("batisseur", 4);
+    armelle->ajouterCompetence("chercheuse de cailloux noir", 7);
+
+    pingu->ajouterCompetence("Faire la bouffe", 10);
+
+    pingu->modifierCompetence("Faire la bouffe", 12);
+
+    adeline->ajouterCompetence("chanter", 4);
+ cout << "\n=== Liste des compétences ===" << endl;
+
+    armelle ->afficherCompetences();
+    pingu ->afficherCompetences();
+    pingu ->supprimerCompetence("Faire la bouffe");
+    pingu->afficherCompetences();
 
     // --- Affichage de la colonie ---
     Pingouin::afficherColonie();
@@ -55,6 +77,8 @@ int main() {
      cout << "\n=== Fin du Job===" << endl;
 
     // Pingouin::afficherColonieTrieeParTemps(); TODO a faire plus tard si j'ai envie  ah ah !!
+
+ 
 
 
     
