@@ -73,7 +73,7 @@ docker compose down
 
 - garde le **controle de la memoire**
 - tant qu'il existe une **ref active**, il est **vivant**
-- si pers le connait -> **suprimé automatiquement**
+- si pers le connait -> **supprimé automatiquement**
 
 qd ? **plusieurs parties du programme** partagent le **même objet** et que tu souhaites
 que la **memoire** soit géree **automatiquement**.
