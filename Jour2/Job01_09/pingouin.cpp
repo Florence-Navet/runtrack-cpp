@@ -3,6 +3,9 @@
 #include <algorithm>
 #include <string>   
 #include <map>
+#include <unordered_map>
+
+
 using namespace std;
 
 
@@ -41,7 +44,10 @@ Pingouin::~Pingouin() {
         colonieNettoyee = true;
     }
 
-    //------------------METHODES DE COLONIES-------------------------------------
+   // =========================
+// --METHODE POUR FORMER LA COLONIE--
+// =========================
+
     // Nettoyer les références 
     colonie.erase(
         remove_if(colonie.begin(), colonie.end(),
@@ -116,7 +122,10 @@ void Pingouin::afficherColonie() {
 
 
 
-// -- METHODES LIEES AU LIEUX --
+// =========================
+// --METHODES LIES AUX LIEUX--
+// =========================
+
 
 void Pingouin::ajouterLieu(const string& lieu) {
     // check si le lieu n'est pas deja existant
@@ -151,7 +160,10 @@ void Pingouin::afficherLieux() {
 }
 
 
-// -- AUTRES METHODES --
+// =========================
+// --AUTRES METHODES--
+// =========================
+
 
 
 void Pingouin :: SePresenter() const {
@@ -195,7 +207,11 @@ void Pingouin::afficherTempsPourTous() {
     }
 }
 
+// =========================
 // --GESTION DES COMPETENCES--
+// =========================
+
+
 void Pingouin::ajouterCompetence(const string& nom, int niveau) {
     // Vérifie si la compétence existe déjà
     if (competences.find(nom) == competences.end()) {
@@ -245,6 +261,158 @@ void Pingouin::afficherCompetences()
     }
 }
 
+// =========================
+// GESTION DES AMIS
+// =========================
+
+
+void Pingouin::ajouterAmis(std::shared_ptr<Pingouin>ami)
+{
+    if(!ami)
+    {
+        cout << "[" <<nom<< "] Erreur: Impossible d'ajouter un ami inexistant." <<endl;
+    }
+
+    //Empêcher qu'un pingouin s'ajoute lui-même en ami
+    if (ami.get() == this)
+    {
+        cout << "[" << nom << "] ne peut pas être son propre ami ! \n Je sais c'est dur d'être seul." << endl;
+    }
+
+    // verifions si déjà ami
+    for (std::set<std::weak_ptr<Pingouin>, std::owner_less<std::weak_ptr<Pingouin>>>::iterator it = amis.begin(); it != amis.end(); ++it) 
+    {
+        std::shared_ptr<Pingouin> pingouin = it->lock();
+        if(pingouin && pingouin == ami) 
+        {
+            cout << " [ " << nom << " ] est déjà ami avec [ " << ami->getNom() << " ] " <<endl;
+            return;
+        }
+    }
+    amis.insert(ami);
+    cout << " [  " << nom << " ] est maintenant ami avec [ "<< ami->getNom()<< " ] " <<endl;
+
+}
+
+// retirer ami si on est faché hihi
+void Pingouin::retirerAmis(std::shared_ptr<Pingouin>ami) 
+{
+    if (!ami) return;
+
+    bool retirer = false;
+
+        for (std::set<std::weak_ptr<Pingouin>, std::owner_less<std::weak_ptr<Pingouin>>>::iterator it = amis.begin(); it != amis.end();) 
+        {
+            std::shared_ptr<Pingouin> pingouin = it->lock();
+
+            if (!pingouin) 
+            {
+                it = amis.erase(it); // nettoie les ref mortes
+            } else if (pingouin == ami)
+            {
+                it = amis.erase(it);
+                cout << "[" << this->nom << "] n'est plus ami avec [" << ami->getNom() << "] " << endl;
+                retirer = false;
+            } else
+            {
+                ++it;
+                    
+            
+            }
+            
+            
+        }
+        if (!retirer)
+         {
+            cout << "[" << this->nom << "] n’était pas ami avec [" << ami->getNom() << "]" << endl;
+        }
+
+
+}
+
+
+// afficher amis
+void Pingouin::afficherAmis()
+{
+    cout << "\n[ " <<this->nom << " ] liste de ses amis : "<< endl;
+
+    bool aDesPotes = false;
+      cout << "Mes amis sont :" << endl;
+
+    for (std::set<std::weak_ptr<Pingouin>, std::owner_less<std::weak_ptr<Pingouin>>>::const_iterator it = amis.begin(); it != amis.end(); ++it)
+    {
+        std::shared_ptr<Pingouin> pingouin = it->lock();
+
+        if(pingouin)
+        {
+            cout << " Le Pingouin : " << pingouin->getNom() <<endl;
+            aDesPotes = true;
+        }
+    }
+        if (!aDesPotes) {
+        cout << " Sorry ! Il est temps d'être sociable. T'as pas d'amis." << endl;
+        }
+}
+
+// =========================
+// JOURNAL DE BORD DU PINGOUIN
+// =========================
+void Pingouin::ajouterDonneesJournal(const std::string&date, const std::string& description)
+{
+    if(journal.find(date) == journal.end())
+    {
+        journal[date] = description;
+        std::cout << " [ " << this->nom << " ] Nouvelle entrés ajoutée au journal ( " << date << " ) : " << description << std::endl;
+
+    } else {
+                std::cout << " [ " << this->nom << " ] Entrée déjà existante pour la date   " << date << " . Utilisez modifierEntreeJournal()." << std::endl;
+    }
+}
+
+void Pingouin::modifierDonneesJournal(const std::string&date, const std::string& nouvelleDescription)
+{
+    std::unordered_map<std::string, std::string>::iterator it = journal.find(date);
+
+    if (it != journal.end())
+    {
+        it ->second = nouvelleDescription;
+        std::cout << " [ " <<this->nom << " ] Entrée du : " <<date << " - mise à jour : " <<nouvelleDescription << std::endl;
+    } else
+    {
+        std::cout << " [ " << this->nom << "] Aucun journal trouvé pour la date du " << date << "."<<std::endl;
+    }
+    
+}
+
+void Pingouin::supprimerDonneesJournal(const std::string&date)
+{
+    std::unordered_map<std::string, std::string>::iterator it = journal.find(date);
+
+    if (it != journal.end())
+    {
+        journal.erase(it);
+        std::cout << "[ " << nom << " ] Entrée du " << date << " supprimée du journal." << std::endl;
+    }
+    else
+    {
+        std::cout << "[ " << nom << " ] Aucun journal à supprimer pour la date " << date << "." << std::endl;
+    }
+}
+
+void Pingouin::afficherJournal()
+{
+    std::cout << "\n Journal de bord de [ " << this->nom << " ] "<<std::endl;
+
+    if(journal.empty())
+    {
+        std::cout << "Rien à signaler pour l'instant. On s'ennuie." <<std::endl;
+        return;
+    }
+for (std::unordered_map<std::string, std::string>::const_iterator it = journal.begin(); it != journal.end(); ++it)
+    {
+        cout << " - " << it ->first << " : " << it->second << endl;
+    }
+}
 
 
 

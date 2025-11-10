@@ -63,6 +63,8 @@
     "random": "cpp",
     "string": "cpp",
     "string_view": "cpp",
-    "ranges": "cpp"
+    "ranges": "cpp",
+    "map": "cpp",
+    "set": "cpp"
   }
 }

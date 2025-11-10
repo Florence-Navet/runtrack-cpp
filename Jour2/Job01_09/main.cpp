@@ -41,6 +41,46 @@ int main() {
     pingu ->supprimerCompetence("Faire la bouffe");
     pingu->afficherCompetences();
 
+    // Relations sociales entre Pingouins
+    cout <<"\n====Amitiés entre nos amis Pingouins====";
+
+    //Creation de ses belles amitiés
+    pingu->ajouterAmis(adeline);
+    pingu->ajouterAmis(armelle);
+    adeline->ajouterAmis(thibault);
+    armelle->ajouterAmis(pingu);
+
+    //Affichage de la liste d'amis
+pingu->afficherAmis();
+adeline->afficherAmis();
+armelle->afficherAmis();
+
+//ils sont fachés, ils se séparent
+pingu->retirerAmis(armelle);
+pingu->afficherAmis();
+
+// Creation Journal de bord
+cout <<"\n==Journal de Bord=="<<endl;
+
+//Ajout d'évènements au journal
+adeline->ajouterDonneesJournal("2025-11-03", "Premières glissade réussie à la Plateforme !!");
+adeline->ajouterDonneesJournal("2025-11-04", "a reussi trou pour pêcher dans la banquise !!");
+adeline->ajouterDonneesJournal("2025-11-05", "a aidé Pingu à construire son nid !!");
+adeline->ajouterDonneesJournal("2025-11-06", "Elle en a ras-le-bol de l'ambiance !!");
+
+pingu->ajouterDonneesJournal("2025-11-05", "a construit son nid avec Adeline");
+
+// modification d'une entrées
+adeline->modifierDonneesJournal("2025-11-04", "a été la première à réussir un trou pour la pêche dans la banquise");
+
+//supprression données
+adeline->supprimerDonneesJournal("2025-11-06");
+
+//afffichage des journaux
+pingu->afficherJournal();
+adeline->afficherJournal();
+armelle->afficherJournal();
+
     // --- Affichage de la colonie ---
     Pingouin::afficherColonie();
 

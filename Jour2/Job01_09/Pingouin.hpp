@@ -7,6 +7,8 @@
 #include <memory>
 #include <string>
 #include <map>
+#include <set>
+#include <unordered_map>
 
 using namespace std;
 
@@ -43,6 +45,14 @@ class Pingouin : public Aquatique, public Terrestre {
         static void afficherColonie();
         static bool comparerTemps(const shared_ptr<Pingouin>& a, const shared_ptr<Pingouin>& b);
 
+        //weak_ptr representant le cercle d'amis de mes potes pingouins
+        std::set<std::weak_ptr<Pingouin>, std::owner_less<std::weak_ptr<Pingouin>>> amis;
+
+        //journal personnel du pingouin
+        std::unordered_map<std::string, std::string>journal;
+
+
+
 
         //calculs et affichage
         double calculerTempsParcours() const;
@@ -60,6 +70,17 @@ class Pingouin : public Aquatique, public Terrestre {
         void modifierCompetence(const string&nom, int nouveauNiveau);
         void supprimerCompetence(const string&nom);
         void afficherCompetences();
+
+        //Methodes de gestion des amis
+        void ajouterAmis(std::shared_ptr<Pingouin>ami);
+        void retirerAmis(std::shared_ptr<Pingouin>ami);
+        void afficherAmis();
+
+        //Methodes liés au journal
+        void ajouterDonneesJournal(const std::string&date, const std::string& description);
+        void modifierDonneesJournal(const std::string&date, const std::string& nouvelleDescription);
+        void supprimerDonneesJournal(const std::string&date);
+        void afficherJournal();
 
 
         //Autres
