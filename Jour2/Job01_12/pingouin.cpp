@@ -136,7 +136,7 @@ void Pingouin::ajouterLieu(const string& lieu) {
 
 void Pingouin::retirerLieu(const string& lieu) {
     //creation d'un iterateur sur le vector <string>
-    vector<std::string>::iterator it = std::remove(lieuxRencontre.begin(), lieuxRencontre.end(), lieu);
+    vector<std::string>::iterator position = std::remove(lieuxRencontre.begin(), lieuxRencontre.end(), lieu);
 
     if (it != lieuxRencontre.end()) {
         lieuxRencontre.erase(it, lieuxRencontre.end());
