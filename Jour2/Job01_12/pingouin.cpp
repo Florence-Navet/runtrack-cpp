@@ -12,7 +12,7 @@ vector<string> Pingouin::lieuxRencontre = {"glacier", "banquise", "océan", "mon
 bool Pingouin::colonieNettoyee = false;
 
 //initialisation de ma map de lieux de peches
-std::unordered_map<std::string, std::string> Pingouin::lieuxDePecheAssocies;
+unordered_map<string, string> Pingouin::lieuxDePecheAssocies;
 
 // Constructeurs / destruteurs
 Pingouin::Pingouin(string nom, double vitesseNage, double vitesseMarche, double vitesseGlisse)
@@ -57,8 +57,9 @@ void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
     
     //convertir weak_ptr en shared_ptr
     vector<shared_ptr<Pingouin>> pingouinsActifs;
-    for (vector<std::weak_ptr<Pingouin>>::iterator it = colonie.begin(); it !=colonie.end(); ++it)  {
-        shared_ptr<Pingouin>pingouin = it ->lock(); //transforme weak en shared
+
+    for (weak_ptr<Pingouin>&pingouinFaible : colonie)  {
+        shared_ptr<Pingouin>pingouin = pingouinFaible.lock(); //transforme weak en shared
         if (pingouin) {
             pingouinsActifs.push_back(pingouin);
         }
@@ -75,16 +76,16 @@ void Pingouin::ajouterAuGroupe(shared_ptr<Pingouin> nouveauPingouin) {
 
 
     //on remplit la colonie avec les pingouins triés en les convertissants en weak_ptr
-    for (vector<shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
-        colonie.push_back(*it);
+    for (shared_ptr<Pingouin>&pingouin : pingouinsActifs) {
+        colonie.push_back(pingouin);
     }
 
 cout << "\n Le pingouin " << nouveauPingouin->getNom()
                 << " a été ajouté et la colonie a été triée par temps de parcours." << endl;
 
  cout << "\nColonie triée par temps de parcours :\n";
-    for (std::vector<shared_ptr<Pingouin>>::iterator it = pingouinsActifs.begin(); it != pingouinsActifs.end(); ++it) {
-    shared_ptr<Pingouin> pingouin = *it;
+    for (shared_ptr<Pingouin>& pingouin : pingouinsActifs) {
+    
     cout << "• " << pingouin->getNom()
                   << " → " << pingouin->calculerTempsParcours() << " s" << endl;
     }
@@ -108,8 +109,8 @@ void Pingouin::nettoyerColonie() {
 
 void Pingouin::afficherColonie() {
     cout << "\nColonie actuelle :" << endl;
-    for (std::weak_ptr<Pingouin> &pingouinFaible : colonie) {
-        std::shared_ptr<Pingouin> pingouin = pingouinFaible.lock();
+    for (weak_ptr<Pingouin> &pingouinFaible : colonie) {
+        shared_ptr<Pingouin> pingouin = pingouinFaible.lock();
         if (pingouin) {  
             pingouin->sePresenter();
         }
@@ -135,14 +136,14 @@ void Pingouin::ajouterLieu(const string& lieu) {
 
 void Pingouin::retirerLieu(const string& lieu) {
     //creation d'un iterateur sur le vector <string>
-    std::vector<std::string>::iterator it = std::remove(lieuxRencontre.begin(), lieuxRencontre.end(), lieu);
+    vector<std::string>::iterator it = std::remove(lieuxRencontre.begin(), lieuxRencontre.end(), lieu);
 
     if (it != lieuxRencontre.end()) {
         lieuxRencontre.erase(it, lieuxRencontre.end());
-        std::cout << "Lieu retiré : "<< lieu << std::endl;
+        cout << "Lieu retiré : "<< lieu << endl;
     } else  {
 
-    std:: cout << "Aucun lieu trouvé ne correspond à "<< lieu << " ." << std::endl;
+    cout << "Aucun lieu trouvé ne correspond à "<< lieu << " ." << endl;
 }
 
 
@@ -150,8 +151,8 @@ void Pingouin::retirerLieu(const string& lieu) {
 
 void Pingouin::afficherLieux() {
     cout << "\n Lieux de rencontre de nos amis Pingouins :" << endl;
-    for(vector <string>::iterator it = lieuxRencontre.begin(); it != lieuxRencontre.end(); ++it) {
-        cout <<  " - " << *it << endl;
+    for(string& lieu : lieuxRencontre) {
+        cout <<  " - " << lieu << endl;
     }
 }
 
@@ -190,8 +191,8 @@ double Pingouin::calculerTempsParcours() const {
 void Pingouin::afficherTempsPourTous() {
     cout << "\n Temps de parcours pour chaque pingouin de la colonie : " << endl;
 
-    for (std::weak_ptr<Pingouin> &pingouinFaible : colonie) {
-        std::shared_ptr<Pingouin> pingouin = pingouinFaible.lock();
+    for (weak_ptr<Pingouin> &pingouinFaible : colonie) {
+        shared_ptr<Pingouin> pingouin = pingouinFaible.lock();
 
         if (pingouin) {
             double temps = pingouin ->calculerTempsParcours();
@@ -276,9 +277,9 @@ void Pingouin::ajouterAmis(std::shared_ptr<Pingouin>ami)
     }
 
     // verifions si déjà ami
-    for (std::set<std::weak_ptr<Pingouin>, std::owner_less<std::weak_ptr<Pingouin>>>::iterator it = amis.begin(); it != amis.end(); ++it) 
+    for (const weak_ptr<Pingouin>& amiFaible : amis) 
     {
-        std::shared_ptr<Pingouin> pingouin = it->lock();
+        std::shared_ptr<Pingouin> pingouin = amiFaible.lock();
         if(pingouin && pingouin == ami) 
         {
             cout << " [ " << nom << " ] est déjà ami avec [ " << ami->getNom() << " ] " <<endl;
@@ -291,38 +292,29 @@ void Pingouin::ajouterAmis(std::shared_ptr<Pingouin>ami)
 }
 
 // retirer ami si on est faché hihi
-void Pingouin::retirerAmis(std::shared_ptr<Pingouin>ami) 
+void Pingouin::retirerAmis(shared_ptr<Pingouin>ami) 
 {
     if (!ami) return;
 
     bool retirer = false;
 
-        for (std::set<std::weak_ptr<Pingouin>, std::owner_less<std::weak_ptr<Pingouin>>>::iterator it = amis.begin(); it != amis.end();) 
+    set<weak_ptr<Pingouin>, owner_less<weak_ptr<Pingouin>>> copieAmis = amis;
+
+        for (const weak_ptr<Pingouin>& amiFaible : copieAmis) 
         {
-            std::shared_ptr<Pingouin> pingouin = it->lock();
+            shared_ptr<Pingouin> pingouin = amiFaible.lock();
 
             if (!pingouin) 
             {
-                it = amis.erase(it); // nettoie les ref mortes
+                amis.erase(amiFaible);
             } else if (pingouin == ami)
             {
-                it = amis.erase(it);
+                amis.erase(amiFaible);
                 cout << "[" << this->nom << "] n'est plus ami avec [" << ami->getNom() << "] " << endl;
                 retirer = false;
-            } else
-            {
-                ++it;
-                    
-            
             }
-            
-            
-        }
-        if (!retirer)
-         {
-            cout << "[" << this->nom << "] n’était pas ami avec [" << ami->getNom() << "]" << endl;
-        }
 
+        }
 
 }
 
@@ -335,9 +327,9 @@ void Pingouin::afficherAmis()
     bool aDesPotes = false;
       cout << "Mes amis sont :" << endl;
 
-    for (std::set<std::weak_ptr<Pingouin>, std::owner_less<std::weak_ptr<Pingouin>>>::const_iterator it = amis.begin(); it != amis.end(); ++it)
+    for (const weak_ptr<Pingouin>& amiFaible : amis)
     {
-        std::shared_ptr<Pingouin> pingouin = it->lock();
+        shared_ptr<Pingouin> pingouin = amiFaible.lock();
 
         if(pingouin)
         {
@@ -358,10 +350,10 @@ void Pingouin::ajouterDonneesJournal(const std::string&date, const std::string& 
     if(journal.find(date) == journal.end())
     {
         journal[date] = description;
-        std::cout << " [ " << this->nom << " ] Nouvelle entrés ajoutée au journal ( " << date << " ) : " << description << std::endl;
+        cout << " [ " << this->nom << " ] Nouvelle entrés ajoutée au journal ( " << date << " ) : " << description << endl;
 
     } else {
-                std::cout << " [ " << this->nom << " ] Entrée déjà existante pour la date   " << date << " . Utilisez modifierEntreeJournal()." << std::endl;
+                cout << " [ " << this->nom << " ] Entrée déjà existante pour la date   " << date << " . Utilisez modifierEntreeJournal()." <<endl;
     }
 }
 
@@ -372,21 +364,21 @@ void Pingouin::modifierDonneesJournal(const std::string&date, const std::string&
     if (it != journal.end())
     {
         it ->second = nouvelleDescription;
-        std::cout << " [ " <<this->nom << " ] Entrée du : " <<date << " - mise à jour : " <<nouvelleDescription << std::endl;
+        cout << " [ " <<this->nom << " ] Entrée du : " <<date << " - mise à jour : " <<nouvelleDescription << endl;
     } else
     {
-        std::cout << " [ " << this->nom << "] Aucun journal trouvé pour la date du " << date << "."<<std::endl;
+        cout << " [ " << this->nom << "] Aucun journal trouvé pour la date du " << date << "."<<endl;
     }
     
 }
 
 void Pingouin::supprimerDonneesJournal(const std::string&date)
 {
-    std::unordered_map<std::string, std::string>::iterator it = journal.find(date);
 
-    if (it != journal.end())
+
+    if (journal.find(date) != journal.end())
     {
-        journal.erase(it);
+        journal.erase(date);
         std::cout << "[ " << nom << " ] Entrée du " << date << " supprimée du journal." << std::endl;
     }
     else
@@ -404,9 +396,9 @@ void Pingouin::afficherJournal()
         std::cout << "Rien à signaler pour l'instant. On s'ennuie." <<std::endl;
         return;
     }
-for (std::unordered_map<std::string, std::string>::const_iterator it = journal.begin(); it != journal.end(); ++it)
+for (const pair<string, string>& entree : journal)
     {
-        cout << " - " << it ->first << " : " << it->second << endl;
+        cout << " - " << entree.first << " : " << entree.second << endl;
     }
 }
 
@@ -437,9 +429,9 @@ void Pingouin::afficherTempsCompetition()
     }
 
     int rang = 1;
-     for (std::multiset<double>::const_iterator it = tempsCompetitions.begin(); it != tempsCompetitions.end(); ++it)
+     for (const double&temps : tempsCompetitions)
      {
-        cout << " " << rang << " performance " << *it << " secondes" << endl;
+        cout << " " << rang << " performance " << temps<< " secondes" << endl;
         rang++;
      }
      cout << "Meilleur temps : " << *tempsCompetitions.begin() << "secondes ! " << endl;
@@ -475,9 +467,9 @@ void Pingouin::ajouterLieuBouffe(const std::string& lieu)
 
 void Pingouin::retirerLieuBouffe(const std::string& lieu)
 {
-    std::unordered_set<std::string>::iterator it = emplacementsNourriture.find(lieu);
 
-    if( it != emplacementsNourriture.end())
+
+    if( emplacementsNourriture.find(lieu) != emplacementsNourriture.end())
     {
         emplacementsNourriture.erase(lieu);
         cout << " [  "<<this->nom<<  " ] a oublié ou perdu l'accé à l'emplacement " << lieu << "." << endl;
@@ -497,9 +489,9 @@ void Pingouin::afficherLieuBouffe()
         cout << " Aucun lieu decouvert pour le moment !!" << endl;
     }
 
-    for (std::unordered_set<std::string>::const_iterator it = emplacementsNourriture.begin(); it!=emplacementsNourriture.end(); ++it) 
+    for (const string& lieu : emplacementsNourriture) 
     {
-        cout << " - " << *it << endl;
+        cout << " - " << lieu << endl;
     }
 }
 
@@ -532,14 +524,14 @@ void Pingouin::seRendreAuMeetUp(const std::string& lieu)
     cout << " [ " << this->nom << " ] se rend au meetup "<< lieu << "..." <<endl;
 
     //verifions si le lieu est associé à une zone de peche
-     std::unordered_map<std::string, std::string>::iterator it = lieuxDePecheAssocies.find(lieu);
 
-     if (it == lieuxDePecheAssocies.end())
+
+     if (lieuxDePecheAssocies.find(lieu)== lieuxDePecheAssocies.end())
      {
         cout << "Aucune zone de pêche n'est liée à ce lieu de meetup " << endl;
         return;
      }
-     std::string zonePeche = it->second;
+     string zonePeche = lieuxDePecheAssocies[lieu];
      cout << "-> Zone de pêche associée : " << zonePeche <<endl;
 
 
@@ -555,7 +547,7 @@ void Pingouin::seRendreAuMeetUp(const std::string& lieu)
         emplacementsNourriture.insert(zonePeche);
      } else
      {
-        std::cout << " [ " << this->nom << " ] n’a rien trouvé aujourd’hui à " << zonePeche << "..." << std::endl;
+        cout << " [ " << this->nom << " ] n’a rien trouvé aujourd’hui à " << zonePeche << "..." << endl;
      }
      
 
@@ -571,9 +563,9 @@ void Pingouin::afficherAssociationsMeetUpPeche()
         return;
     }
 
-    for (std::unordered_map<std::string, std::string>:: const_iterator it = lieuxDePecheAssocies.begin(); it!=lieuxDePecheAssocies.end(); ++it )
+    for (const pair<string, string>& association : lieuxDePecheAssocies)
     {
-        cout << " - " << it->first << " <-> " << it->second <<endl;
+        cout << " - " << association.first << " <-> " << association.second <<endl;
     }
 }
 
