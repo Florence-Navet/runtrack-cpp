@@ -52,6 +52,10 @@ class Pingouin : public Aquatique, public Terrestre {
         std::unordered_map<std::string, std::string>journal;
 
 
+        //multiset pour les compétitions (en secondes) plusieurs perf possibles
+        std::multiset<double> tempsCompetitions;
+
+
 
 
         //calculs et affichage
@@ -81,6 +85,11 @@ class Pingouin : public Aquatique, public Terrestre {
         void modifierDonneesJournal(const std::string&date, const std::string& nouvelleDescription);
         void supprimerDonneesJournal(const std::string&date);
         void afficherJournal();
+
+        //Methodes liées au Compétitions
+        void ajouterTempsCompétition(double temps);
+        void afficherTempsCompetition();
+        double meilleurTemps(); // meilleur chrono
 
 
         //Autres

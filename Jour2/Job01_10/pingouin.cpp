@@ -414,6 +414,50 @@ for (std::unordered_map<std::string, std::string>::const_iterator it = journal.b
     }
 }
 
+// ===============
+// JO  DES PINGOUINS
+// ===============
+
+void Pingouin::ajouterTempsCompétition(double temps)
+{
+    if (temps < 0) 
+    {
+        cout << " [  " << this->nom << " ] Temps non validé : " << temps << " secondes." << endl; 
+    } else
+    {
+        tempsCompetitions.insert(temps);
+        cout << " [  " << this->nom << " ] a terminé la compétition en " << temps << " secondes !" << endl;
+    }
+    
+}
+
+void Pingouin::afficherTempsCompetition()
+{
+    cout << "\nTemps de compétition de [ " << nom << " ] : " << endl;
+
+    if(tempsCompetitions.empty())
+    {
+        cout << "Aucun temps enregistré. Ce pingouin n'a pas encore concouru !!" <<endl;
+    }
+
+    int rang = 1;
+     for (std::multiset<double>::const_iterator it = tempsCompetitions.begin(); it != tempsCompetitions.end(); ++it)
+     {
+        cout << " " << rang << " performance " << *it << " secondes" << endl;
+        rang++;
+     }
+     cout << "Meilleur temps : " << *tempsCompetitions.begin() << "secondes ! " << endl;
+
+}
+
+double Pingouin::meilleurTemps()
+ {
+    if (tempsCompetitions.empty())
+    return -1.0;
+
+    return *tempsCompetitions.begin();
+}
+
 
 
 // ====================

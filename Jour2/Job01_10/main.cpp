@@ -81,6 +81,25 @@ pingu->afficherJournal();
 adeline->afficherJournal();
 armelle->afficherJournal();
 
+//Partie Compétition
+cout << "\n=== Compétitions de glisse ===" << endl;
+
+//Ajout de temps de compétition
+pingu->ajouterTempsCompétition(12.4);
+pingu->ajouterTempsCompétition(10.9);
+pingu->ajouterTempsCompétition(11.7);
+
+adeline->ajouterTempsCompétition(13.2);
+adeline->ajouterTempsCompétition(11.5);
+
+armelle->ajouterTempsCompétition(9.8);
+armelle->ajouterTempsCompétition(9.6);
+
+//affichage compétition
+pingu->afficherTempsCompetition();
+adeline->afficherTempsCompetition();
+armelle->afficherTempsCompetition();
+
     // --- Affichage de la colonie ---
     Pingouin::afficherColonie();
 

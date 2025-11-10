@@ -51,7 +51,7 @@ cmake --build build --clean-first
 
 # 4. Lancer ton exécutable
 
-./build/Jour2/Job01_09/main
+./build/Jour2/Job01_10/main
 
 # 5. Quitter le conteneur quand tu as fini
 
